@@ -1,99 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
-<script>
-  if(localStorage.getItem("aw-theme")==="light"){
-    document.documentElement.classList.add("light");
-  }
-</script><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Alireza Web؛ خدمات کامپیوتری، طراحی سایت، طراحی لوگو و پوستر، خدمات Office و ویرایش تصویر.">
-  <title>Alireza Web | خدمات کامپیوتری و دیجیتال</title>
-  <link rel="stylesheet" href="style.css">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ALIREZA WEB | خدمات وب و فناوری">
+<title>ALIREZA WEB | خدمات وب و فناوری</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="header" id="header">
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">AW</span><span>Alireza <b>Web</b></span></a>
-    <nav id="nav">
-      <a class="active" href="index.html">خانه</a>
-      <a href="services.html">خدمات</a>
-      <a href="about.html">درباره من</a>
-      <a href="portfolio.html">نمونه‌کارها</a>
-      <a href="contact.html">تماس</a>
-    </nav>
-    <div class="nav-actions">
-      <button id="themeToggle" class="icon-btn" aria-label="تغییر حالت">🌙</button>
-      <a class="btn small" href="contact.html">ارتباط سریع</a>
-      <button id="menuToggle" class="menu-btn" aria-label="منو">☰</button>
-    </div>
-  </div>
+  <a class="brand" href="index.html"><span>AW</span><b>ALIREZA WEB</b></a>
+  <button class="icon-btn menu-btn" id="menuBtn" aria-label="باز کردن منو">☰</button>
+  <nav class="nav" id="nav">
+    <a class="active" href="index.html">خانه</a><a href="services.html">خدمات</a><a href="portfolio.html">نمونه‌کارها</a><a href="about.html">درباره من</a><a href="contact.html">تماس</a>
+  </nav>
+  <button class="icon-btn theme-btn" id="themeBtn" aria-label="تغییر حالت">☾</button>
 </header>
 
 <main>
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <span class="badge">✦ Computer & Digital Services</span>
-      <h1>خدمات دیجیتال با نام <span>Alireza Web</span></h1>
-      <p>طراحی سایت، طراحی لوگو و پوستر، خدمات Office و ICDL، ویرایش تصویر، انتقال فایل و خدمات کامپیوتری؛ ساده، کاربردی و حرفه‌ای.</p>
-      <div class="actions">
-        <a class="btn" href="services.html">مشاهده خدمات</a>
-        <a class="btn ghost" href="contact.html">ارتباط با من</a>
-      </div>
-      <div class="mini-stats">
-        <div><strong>AW</strong><small>برند شخصی</small></div>
-        <div><strong>ICDL</strong><small>مهارت‌های اداری</small></div>
-        <div><strong>AI</strong><small>خدمات طراحی</small></div>
-      </div>
+<section class="hero section">
+  <div class="hero-text">
+    <p class="eyebrow">WEB • DESIGN • TECH</p>
+    <h1>ایده‌ات رو به یک<br><span>کار حرفه‌ای</span> تبدیل کنیم.</h1>
+    <p class="lead">ALIREZA WEB | خدمات وب و فناوری؛ طراحی سایت، طراحی گرافیک و خدمات کامپیوتری در یک مجموعه.</p>
+    <div class="actions">
+      <a class="btn primary" href="services.html">مشاهده خدمات</a>
+      <a class="btn ghost" href="portfolio.html">دیدن نمونه‌کارها</a>
     </div>
-    <div class="hero-image">
-      <div class="image-ring"></div>
-      <img src="alireza-web.png" alt="Alireza Web">
-    </div>
+  </div>
+  <div class="hero-card">
+    <div class="aw">AW</div><div class="scan"></div>
+    <p>ALIREZA WEB</p><small>Digital • Creative • Tech</small>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="section-head"><span class="tag">خدمات</span><h2>چه کارهایی انجام می‌دهم؟</h2><p>چند مورد از خدمات اصلی Alireza Web</p></div>
-    <div class="cards">
-      <article class="card"><div class="card-icon">🌐</div><h3>طراحی سایت</h3><p>طراحی سایت‌های مدرن و ریسپانسیو برای معرفی خدمات و کسب‌وکار.</p></article>
-      <article class="card"><div class="card-icon">🎨</div><h3>لوگو و پوستر</h3><p>طراحی‌های تبلیغاتی و هویت بصری با کمک ابزارهای گرافیکی و هوش مصنوعی.</p></article>
-      <article class="card"><div class="card-icon">📄</div><h3>Office و ICDL</h3><p>کار با Word، Excel و PowerPoint و انجام امور اداری و فایل‌های دیجیتال.</p></article>
-      <article class="card"><div class="card-icon">🛠️</div><h3>خدمات کامپیوتری</h3><p>انتقال فایل، نصب نرم‌افزار و بازی و انجام کارهای عمومی کامپیوتری.</p></article>
-    </div>
-    <div class="center"><a class="btn ghost" href="services.html">همه خدمات ←</a></div>
+  <div class="section-head"><div><p class="eyebrow">WHAT I DO</p><h2>خدمات اصلی</h2></div><a class="text-link" href="services.html">همه خدمات ←</a></div>
+  <div class="cards">
+    <article class="card"><span class="card-icon">⌘</span><h3>طراحی سایت</h3><p>سایت‌های مدرن، سبک و سازگار با موبایل.</p></article>
+    <article class="card"><span class="card-icon">✦</span><h3>طراحی گرافیک</h3><p>لوگو، پوستر، بنر و محتوای بصری.</p></article>
+    <article class="card"><span class="card-icon">▣</span><h3>خدمات کامپیوتری</h3><p>نصب نرم‌افزار، Office، Photoshop و پشتیبانی.</p></article>
   </div>
 </section>
 
-<section class="section showcase">
-  <div class="container split">
-    <div>
-      <span class="tag">درباره Alireza Web</span>
-      <h2>یک برند شخصی برای خدمات کامپیوتری و دیجیتال</h2>
-      <p>من علیرضا هستم؛ دانش‌آموز رشته کامپیوتر و فعال در زمینه خدمات دیجیتال. هدف Alireza Web ارائه خدمات کاربردی با ظاهر حرفه‌ای و هزینه منطقی است.</p>
-      <a class="btn" href="about.html">بیشتر درباره من</a>
-    </div>
-    <div class="info-panel">
-      <div>💻 <b>طراحی و وب</b><span>سایت‌های ریسپانسیو و مدرن</span></div>
-      <div>🤖 <b>خدمات AI</b><span>طراحی لوگو و پوستر با ابزارهای هوش مصنوعی</span></div>
-      <div>📁 <b>امور کامپیوتری</b><span>فایل، Office و خدمات عمومی</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section cta">
-  <div class="container cta-box">
-    <h2>برای سفارش یا مشاوره آماده‌ام</h2>
-    <p>در صورت نیاز، از طریق واتساپ یا شبکه‌های اجتماعی با من در ارتباط باشید.</p>
-    <a class="btn" href="contact.html">راه‌های ارتباطی</a>
-  </div>
+<section class="cta section">
+  <div><p class="eyebrow">LET'S WORK</p><h2>برای شروع یک پروژه آماده‌ای؟</h2><p>جزئیات کارت رو بفرست تا درباره‌ش صحبت کنیم.</p></div>
+  <a class="btn primary" href="contact.html">ارتباط با من</a>
 </section>
 </main>
-
-<footer><div class="container footer-wrap"><span>© Alireza Web</span><span>Computer Services</span></div></footer>
-<div class="float"><a href="https://wa.me/989903404377" target="_blank" title="واتساپ">💬</a><a href="tel:+989903404377" title="تماس">📞</a><button id="topBtn" title="بالا">↑</button></div>
+<footer class="footer"><span>© 2026 ALIREZA WEB</span><a href="contact.html">تماس با من</a></footer>
+<button class="top-btn" id="topBtn" aria-label="بازگشت به بالا">↑</button>
 <script src="script.js"></script>
-</body>
-</html>
+</body></html>
