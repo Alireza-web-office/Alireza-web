@@ -1,11 +1,265 @@
-<!doctype html><html lang="fa" dir="rtl"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>نمونه‌کارها | ALIREZA WEB</title><link rel="stylesheet" href="style.css"></head><body>
-<header class="header" id="header"><a class="brand" href="index.html"><span>AW</span><b>ALIREZA WEB</b></a><button class="icon-btn menu-btn" id="menuBtn">☰</button><nav class="nav" id="nav"><a href="index.html">خانه</a><a href="services.html">خدمات</a><a class="active" href="portfolio.html">نمونه‌کارها</a><a href="about.html">درباره من</a><a href="contact.html">تماس</a></nav><button class="icon-btn theme-btn" id="themeBtn">☾</button></header>
-<main><section class="page-hero section"><p class="eyebrow">PORTFOLIO</p><h1>نمونه‌کارهای <span>من</span></h1><p>این بخش برای نمایش پروژه‌های واقعی و نمونه‌های جدید آماده شده است.</p></section>
-<section class="section"><div class="portfolio-grid">
-<article class="work card"><div class="work-art">AW</div><h3>هویت بصری ALIREZA WEB</h3><p>برندینگ و طراحی هویت بصری.</p></article>
-<article class="work card"><div class="work-art">WEB</div><h3>طراحی سایت</h3><p>نمونه طراحی رابط وب مدرن و ریسپانسیو.</p></article>
-<article class="work card"><div class="work-art">PS4</div><h3>گرافیک خدمات بازی</h3><p>طراحی محتوای معرفی خدمات PlayStation.</p></article>
-</div><div class="empty-note">نمونه‌کارهای واقعی جدید را می‌توانیم بعداً همین‌جا اضافه کنیم.</div></section></main>
-<footer class="footer"><span>© 2026 ALIREZA WEB</span><a href="contact.html">تماس با من</a></footer><button class="top-btn" id="topBtn">↑</button><script src="script.js"></script></body></html>
+```html
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d19">
+  <title>نمونه‌کارها | ALIREZA WEB</title>
+  <meta name="description" content="مشاهده نمونه‌کارها و پروژه‌های ALIREZA WEB در زمینه طراحی وب و خدمات دیجیتال.">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .portfolio-tools {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 25px 0 30px;
+    }
+
+    .portfolio-filter {
+      border: 1px solid rgba(0, 195, 255, .35);
+      background: transparent;
+      color: inherit;
+      padding: 10px 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font: inherit;
+      transition: .25s;
+    }
+
+    .portfolio-filter:hover,
+    .portfolio-filter.active {
+      background: #087dba;
+      border-color: #00c3ff;
+      color: white;
+      box-shadow: 0 0 16px rgba(0, 195, 255, .2);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
+      gap: 22px;
+    }
+
+    .work {
+      min-width: 0;
+      overflow: hidden;
+      transition: transform .25s, border-color .25s;
+    }
+
+    .work:hover {
+      transform: translateY(-5px);
+      border-color: #00bfff;
+    }
+
+    .work-art {
+      min-height: 155px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      background:
+        radial-gradient(circle at center, rgba(0, 195, 255, .2), transparent 60%),
+        linear-gradient(135deg, #101b32, #080d19);
+      border: 1px solid rgba(0, 195, 255, .22);
+      color: #00c3ff;
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 0 0 20px rgba(0, 195, 255, .5);
+    }
+
+    .work h3 {
+      margin-bottom: 10px;
+    }
+
+    .work p {
+      line-height: 1.9;
+      opacity: .85;
+    }
+
+    .work[hidden] {
+      display: none !important;
+    }
+
+    .work-category {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: rgba(0, 195, 255, .1);
+      color: #00bfff;
+      font-size: 12px;
+    }
+
+    .project-details {
+      margin-top: 15px;
+      border-top: 1px solid rgba(128, 128, 128, .2);
+      padding-top: 12px;
+    }
+
+    .project-details summary {
+      cursor: pointer;
+      color: #00bfff;
+      padding: 5px 0;
+    }
+
+    .project-details p {
+      font-size: 14px;
+    }
+
+    .portfolio-note {
+      margin-top: 28px;
+      padding: 18px;
+      border: 1px solid rgba(0, 195, 255, .22);
+      border-radius: 14px;
+      text-align: center;
+      line-height: 2;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .work,
+      .portfolio-filter {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" id="header">
+    <a class="brand" href="index.html">
+      <span>AW</span>
+      <b>ALIREZA WEB</b>
+    </a>
+
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="باز کردن منو">☰</button>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">خانه</a>
+      <a href="services.html">خدمات</a>
+      <a class="active" href="portfolio.html">نمونه‌کارها</a>
+      <a href="about.html">درباره من</a>
+      <a href="contact.html">تماس</a>
+    </nav>
+
+    <button class="icon-btn theme-btn" id="themeBtn" aria-label="تغییر پوسته">☾</button>
+  </header>
+
+  <main>
+    <section class="page-hero section">
+      <p class="eyebrow">PORTFOLIO / PROJECTS</p>
+      <h1>نمونه‌کارهای <span>من</span></h1>
+      <p>
+        مجموعه‌ای از پروژه‌ها و فعالیت‌های ALIREZA WEB؛
+        این صفحه به‌مرور با نمونه‌کارهای واقعی به‌روزرسانی می‌شود.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="portfolio-tools" aria-label="فیلتر نمونه‌کارها">
+        <button class="portfolio-filter active" type="button" data-filter="all" aria-pressed="true">همه پروژه‌ها</button>
+        <button class="portfolio-filter" type="button" data-filter="web" aria-pressed="false">طراحی وب</button>
+        <button class="portfolio-filter" type="button" data-filter="graphic" aria-pressed="false">گرافیک</button>
+        <button class="portfolio-filter" type="button" data-filter="tech" aria-pressed="false">خدمات فناوری</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <article class="work card" data-category="web">
+          <div class="work-art" aria-hidden="true">AW</div>
+          <span class="work-category">طراحی وب</span>
+          <h3>وب‌سایت ALIREZA WEB</h3>
+          <p>طراحی و توسعه وب‌سایت شخصی و معرفی خدمات دیجیتال.</p>
+          <details class="project-details">
+            <summary>جزئیات پروژه</summary>
+            <p>این وب‌سایت برای معرفی خدمات، نمایش نمونه‌کارها و ارتباط با مخاطبان طراحی شده است.</p>
+            <p><strong>وضعیت:</strong> در حال توسعه</p>
+            <a href="index.html">مشاهده وب‌سایت</a>
+          </details>
+        </article>
+
+        <article class="work card" data-category="graphic">
+          <div class="work-art" aria-hidden="true">DESIGN</div>
+          <span class="work-category">طراحی گرافیک</span>
+          <h3>هویت بصری ALIREZA WEB</h3>
+          <p>ایده‌پردازی برای هویت بصری با سبک مدرن و رنگ‌های نئونی.</p>
+          <details class="project-details">
+            <summary>جزئیات پروژه</summary>
+            <p>این کارت فعلاً معرفی اولیه پروژه است. تصویر و خروجی واقعی طراحی را بعداً به آن اضافه می‌کنیم.</p>
+            <p><strong>وضعیت:</strong> نیازمند افزودن خروجی نهایی</p>
+          </details>
+        </article>
+
+        <article class="work card" data-category="graphic">
+          <div class="work-art" aria-hidden="true">ALI / GAME</div>
+          <span class="work-category">گرافیک و بازی</span>
+          <h3>محتوای گرافیکی خدمات بازی</h3>
+          <p>معرفی خدمات مرتبط با بازی و کنسول با ظاهر دیجیتال و مدرن.</p>
+          <details class="project-details">
+            <summary>جزئیات پروژه</summary>
+            <p>نمونه اولیه برای معرفی طرح‌های گرافیکی مرتبط با خدمات بازی؛ تصاویر واقعی بعداً اضافه می‌شوند.</p>
+            <p><strong>وضعیت:</strong> نیازمند افزودن تصویر</p>
+          </details>
+        </article>
+
+        <article class="work card" data-category="tech">
+          <div class="work-art" aria-hidden="true">TECH</div>
+          <span class="work-category">خدمات فناوری</span>
+          <h3>خدمات نرم‌افزاری و کامپیوتری</h3>
+          <p>معرفی فعالیت‌های مرتبط با نرم‌افزار و خدمات عمومی کامپیوتر.</p>
+          <details class="project-details">
+            <summary>جزئیات پروژه</summary>
+            <p>این بخش برای ثبت نمونه‌های واقعی خدمات انجام‌شده و تصاویر مربوط به آن‌ها در نظر گرفته شده است.</p>
+            <p><strong>وضعیت:</strong> آماده تکمیل</p>
+          </details>
+        </article>
+
+      </div>
+
+      <div class="portfolio-note">
+        <strong>پروژه‌های جدید در راه‌اند.</strong>
+        <p>به‌مرور تصاویر، توضیحات و لینک پروژه‌های واقعی به این مجموعه اضافه خواهند شد.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 ALIREZA WEB</span>
+    <a href="contact.html">تماس با من</a>
+  </footer>
+
+  <button class="top-btn" id="topBtn" aria-label="بازگشت به بالا">↑</button>
+
+  <script src="script.js"></script>
+
+  <script>
+    (() => {
+      const filters = document.querySelectorAll(".portfolio-filter");
+      const projects = document.querySelectorAll(".work");
+
+      filters.forEach((button) => {
+        button.addEventListener("click", () => {
+          const category = button.dataset.filter;
+
+          filters.forEach((item) => {
+            const selected = item === button;
+            item.classList.toggle("active", selected);
+            item.setAttribute("aria-pressed", String(selected));
+          });
+
+          projects.forEach((project) => {
+            project.hidden =
+              category !== "all" &&
+              project.dataset.category !== category;
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+```
