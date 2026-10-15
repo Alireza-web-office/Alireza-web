@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -8,9 +9,11 @@
   <meta name="theme-color" content="#080d18">
 
   <title>ALIREZA WEB | خدمات وب و فناوری</title>
+
   <link rel="stylesheet" href="style.css">
 
   <style>
+    /* بخش اصلی معرفی */
     .hero-card {
       position: relative;
       overflow: hidden;
@@ -23,28 +26,28 @@
       padding: 28px 20px;
     }
 
+    /* قاب دایره‌ای عکس */
     .profile-photo {
       display: block;
-      width: 160px;
-      height: 160px;
-      max-width: 65vw;
+      width: 160px !important;
+      height: 160px !important;
+      min-width: 160px;
+      min-height: 160px;
+      max-width: none !important;
+      max-height: none !important;
       aspect-ratio: 1 / 1;
       box-sizing: border-box;
-      flex-shrink: 0;
-
-      border-radius: 50%;
+      flex: 0 0 160px;
+      border-radius: 50% !important;
       object-fit: cover;
-      object-position: center 30%;
-
+      object-position: center center;
       border: 3px solid #35baff;
-      outline: 2px solid #168bff55;
-      outline-offset: 5px;
-
+      outline: 2px solid #168bff66;
+      outline-offset: 4px;
       box-shadow:
         0 0 10px #35baffaa,
         0 0 24px #168bff88,
-        0 0 42px #168bff44;
-
+        0 0 40px #168bff44;
       position: relative;
       z-index: 2;
       background: #080d18;
@@ -64,150 +67,3 @@
       pointer-events: none;
     }
 
-    @media (max-width: 600px) {
-      .hero-card {
-        margin-top: 24px;
-        padding: 24px 16px;
-      }
-
-      .profile-photo {
-        width: 135px;
-        height: 135px;
-        max-width: 65vw;
-        object-position: center 30%;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-card *,
-      .hero-text * {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header class="header" id="header">
-    <a class="brand" href="index.html">
-      <span>AW</span>
-      <b>ALIREZA WEB</b>
-    </a>
-
-    <button class="icon-btn menu-btn" id="menuBtn" type="button"
-      aria-label="باز کردن منو" aria-controls="nav" aria-expanded="false">☰</button>
-
-    <nav class="nav" id="nav">
-      <a class="active" href="index.html" aria-current="page">خانه</a>
-      <a href="services.html">خدمات</a>
-      <a href="portfolio.html">نمونه‌کارها</a>
-      <a href="about.html">درباره من</a>
-      <a href="contact.html">تماس</a>
-    </nav>
-
-    <button class="icon-btn theme-btn" id="themeBtn" type="button"
-      aria-label="تغییر حالت">☾</button>
-  </header>
-
-  <main>
-
-    <section class="hero section">
-
-      <div class="hero-text">
-        <p class="eyebrow">WEB • DESIGN • TECH</p>
-
-        <h1>
-          ایده‌ات رو به یک<br>
-          <span>کار حرفه‌ای</span> تبدیل کنیم.
-        </h1>
-
-        <p class="lead">
-          ALIREZA WEB | خدمات وب و فناوری؛ طراحی سایت،
-          طراحی گرافیک و خدمات کامپیوتری در یک مجموعه.
-        </p>
-
-        <div class="actions">
-          <a class="btn primary" href="services.html">مشاهده خدمات</a>
-          <a class="btn ghost" href="portfolio.html">دیدن نمونه‌کارها</a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-
-        <img
-          class="profile-photo"
-          src="file_000000008a58820abf6e43d9c5e68d1e.png"
-          alt="عکس علیرضا مزارعی"
-          loading="eager"
-          decoding="async"
-        >
-
-        <div class="aw">AW</div>
-        <div class="scan"></div>
-        <small>Digital • Creative • Tech</small>
-
-      </div>
-    </section>
-
-    <section class="section">
-
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">WHAT I DO</p>
-          <h2>خدمات اصلی</h2>
-        </div>
-
-        <a class="text-link" href="services.html">همه خدمات ←</a>
-      </div>
-
-      <div class="cards">
-
-        <article class="card">
-          <span class="card-icon">⌘</span>
-          <h3>طراحی سایت</h3>
-          <p>سایت‌های مدرن، سبک و سازگار با موبایل.</p>
-        </article>
-
-        <article class="card">
-          <span class="card-icon">✦</span>
-          <h3>طراحی گرافیک</h3>
-          <p>لوگو، پوستر، بنر و محتوای بصری.</p>
-        </article>
-
-        <article class="card">
-          <span class="card-icon">▣</span>
-          <h3>خدمات کامپیوتری</h3>
-          <p>نصب نرم‌افزار، Office، Photoshop و پشتیبانی.</p>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="cta section">
-
-      <div>
-        <p class="eyebrow">LET'S WORK</p>
-        <h2>برای شروع یک پروژه آماده‌ای؟</h2>
-        <p>جزئیات کارت رو بفرست تا درباره‌ش صحبت کنیم.</p>
-      </div>
-
-      <a class="btn primary" href="contact.html">ارتباط با من</a>
-
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <span>© 2026 ALIREZA WEB</span>
-    <a href="contact.html">تماس با من</a>
-  </footer>
-
-  <button class="top-btn" id="topBtn" type="button"
-    aria-label="بازگشت به بالا">↑</button>
-
-  <script src="script.js"></script>
-
-</body>
-</html>
