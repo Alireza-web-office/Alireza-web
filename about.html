@@ -1,106 +1,13 @@
-```html
+
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="درباره علیرضا مزارعی، مدیر ALIREZA WEB؛ خدمات وب و فناوری، طراحی گرافیک و خدمات کامپیوتری.">
-  <meta name="theme-color" content="#080d18">
-
-  <title>درباره من | ALIREZA WEB</title>
-
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-    .about-box {
-      display: grid;
-      grid-template-columns: 150px minmax(0, 1fr);
-      align-items: start;
-      gap: 28px;
-    }
-
-    .profile-mark {
-      width: 130px;
-      height: 130px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #35baff;
-      border-radius: 50%;
-      color: #35baff;
-      font-size: 32px;
-      font-weight: bold;
-      background: radial-gradient(circle, #123052, #080d18 72%);
-      box-shadow: 0 0 18px #168bff55, inset 0 0 18px #168bff22;
-    }
-
-    .about-content h2 {
-      margin-top: 0;
-    }
-
-    .about-content p {
-      line-height: 2.1;
-    }
-
-    .about-skills {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .about-skill {
-      padding: 14px;
-      border: 1px solid #35baff33;
-      border-radius: 12px;
-      background: #168bff0b;
-    }
-
-    .about-skill h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
-    }
-
-    .about-skill p {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    .about-goal {
-      margin-top: 24px;
-      padding: 18px;
-      border-right: 3px solid #35baff;
-      border-radius: 8px;
-      background: #168bff0b;
-    }
-
-    .about-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    @media (max-width: 600px) {
-      .about-box {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 20px;
-      }
-
-      .profile-mark {
-        width: 100px;
-        height: 100px;
-        font-size: 27px;
-        margin: 0 auto;
-      }
-
-      .about-skills {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="درباره علیرضا مزارعی و مجموعه ALIREZA WEB">
+<title>درباره من | ALIREZA WEB</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header class="header" id="header">
@@ -109,29 +16,19 @@
     <b>ALIREZA WEB</b>
   </a>
 
-  <button
-    class="icon-btn menu-btn"
-    id="menuBtn"
-    type="button"
-    aria-label="باز کردن منو"
-    aria-controls="nav"
-    aria-expanded="false"
-  >☰</button>
+  <button class="icon-btn menu-btn" id="menuBtn"
+  type="button" aria-label="باز کردن منو">☰</button>
 
   <nav class="nav" id="nav">
     <a href="index.html">خانه</a>
     <a href="services.html">خدمات</a>
     <a href="portfolio.html">نمونه‌کارها</a>
-    <a class="active" href="about.html" aria-current="page">درباره من</a>
+    <a class="active" href="about.html">درباره من</a>
     <a href="contact.html">تماس</a>
   </nav>
 
-  <button
-    class="icon-btn theme-btn"
-    id="themeBtn"
-    type="button"
-    aria-label="تغییر حالت"
-  >☾</button>
+  <button class="icon-btn theme-btn" id="themeBtn"
+  type="button" aria-label="تغییر حالت">☾</button>
 </header>
 
 <main>
@@ -139,63 +36,64 @@
   <section class="page-hero section">
     <p class="eyebrow">ABOUT ME</p>
     <h1>درباره <span>ALIREZA WEB</span></h1>
-    <p>آشنایی بیشتر با من، فعالیت‌ها و هدفم در دنیای فناوری.</p>
+    <p>آشنایی با من و فعالیت‌هایم در دنیای وب و فناوری.</p>
   </section>
 
   <section class="section about-box">
 
-    <div class="profile-mark" aria-label="نشان ALIREZA WEB">AW</div>
+    <div class="profile-mark">AW</div>
 
-    <div class="about-content">
-
-      <p class="eyebrow">WHO I AM</p>
-
+    <div>
       <h2>سلام، من علیرضا مزارعی هستم.</h2>
 
       <p>
-        مدیر مجموعه <strong>ALIREZA WEB</strong>؛
-        به دنیای کامپیوتر، فناوری و طراحی دیجیتال علاقه دارم
-        و تلاش می‌کنم با استفاده از ابزارهای روز، ایده‌ها رو
-        به پروژه‌های کاربردی و جذاب تبدیل کنم.
+        مدیر مجموعه ALIREZA WEB؛ به دنیای کامپیوتر،
+        فناوری و طراحی دیجیتال علاقه دارم و تلاش می‌کنم
+        ایده‌ها رو به پروژه‌های کاربردی و جذاب تبدیل کنم.
       </p>
 
       <h2>زمینه‌های فعالیت من</h2>
 
-      <div class="about-skills">
+      <div class="cards">
 
-        <div class="about-skill">
-          <h3>⌘ طراحی و توسعه وب</h3>
+        <article class="card">
+          <span class="card-icon">⌘</span>
+          <h3>طراحی وب‌سایت</h3>
           <p>طراحی و ساخت وب‌سایت‌های کاربردی و مدرن.</p>
-        </div>
+        </article>
 
-        <div class="about-skill">
-          <h3>✦ طراحی گرافیک</h3>
+        <article class="card">
+          <span class="card-icon">✦</span>
+          <h3>طراحی گرافیک</h3>
           <p>طراحی لوگو، پوستر، بنر و محتوای بصری.</p>
-        </div>
+        </article>
 
-        <div class="about-skill">
-          <h3>▣ خدمات کامپیوتری</h3>
+        <article class="card">
+          <span class="card-icon">▣</span>
+          <h3>خدمات کامپیوتری</h3>
           <p>کار با نرم‌افزارها و ابزارهای کاربردی کامپیوتر.</p>
-        </div>
+        </article>
 
-        <div class="about-skill">
-          <h3>✧ ابزارهای هوش مصنوعی</h3>
-          <p>استفاده از ابزارهای هوش مصنوعی برای انجام پروژه‌های دیجیتال.</p>
-        </div>
+        <article class="card">
+          <span class="card-icon">✧</span>
+          <h3>هوش مصنوعی</h3>
+          <p>استفاده از ابزارهای هوش مصنوعی در پروژه‌های دیجیتال.</p>
+        </article>
 
       </div>
 
-      <div class="about-goal">
-        <h3>هدف من</h3>
+      <div style="margin-top:24px;">
+        <h2>هدف من</h2>
+
         <p>
-          هدفم ارائه خدمات کاربردی، باکیفیت و قابل‌اعتماد و
-          ایجاد تجربه‌ای خوب برای افرادیه که با ALIREZA WEB
-          همکاری می‌کنن. این مجموعه به‌صورت مرحله‌ای توسعه پیدا
-          می‌کنه و نمونه‌کارها و خدمات جدید بهش اضافه می‌شن.
+          هدفم ارائه خدمات کاربردی، باکیفیت و قابل‌اعتماد
+          و ایجاد تجربه‌ای خوب برای افرادیه که با ALIREZA WEB
+          همکاری می‌کنن. این مجموعه به‌مرور توسعه پیدا می‌کنه
+          و نمونه‌کارها و خدمات جدید بهش اضافه می‌شن.
         </p>
       </div>
 
-      <div class="about-actions">
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;">
 
         <a class="btn primary" href="contact.html">
           ارتباط با من
@@ -204,13 +102,11 @@
         <a
           class="btn primary"
           href="https://github.com/Alireza-web-office/Alireza-web/raw/refs/heads/main/%D8%B1%D8%B2%D9%88%D9%85%D9%87%20%D8%B9%D9%84%DB%8C%D8%B1%D8%B6%D8%A7%20%D9%85%D8%B2%D8%A7%D8%B1%D8%B9%DB%8C.pdf"
-          download
-        >
+          download>
           📄 دانلود رزومه
         </a>
 
       </div>
-
     </div>
 
   </section>
@@ -222,15 +118,9 @@
   <a href="contact.html">تماس با من</a>
 </footer>
 
-<button
-  class="top-btn"
-  id="topBtn"
-  type="button"
-  aria-label="بازگشت به بالا"
->↑</button>
+<button class="top-btn" id="topBtn"
+type="button" aria-label="بازگشت به بالا">↑</button>
 
 <script src="script.js"></script>
-
 </body>
 </html>
-```
