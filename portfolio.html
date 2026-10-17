@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080d19">
-  <meta name="description" content="نمونه‌کارهای ALIREZA WEB در زمینه طراحی وب، هویت بصری، گرافیک، فناوری و خدمات PS4.">
-  <title>نمونه‌کارها | ALIREZA WEB</title>
+  <meta name="description" content="نمونه‌کارها و خدمات ALIREZA WEB؛ طراحی وب، گرافیک، فناوری و خدمات PS4.">
+  <title>نمونه‌کارها و خدمات | ALIREZA WEB</title>
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -24,6 +24,15 @@
         radial-gradient(ellipse at 90% 42%, rgba(82,80,255,.12), transparent 35%),
         #080d19;
       color: var(--glass-text);
+    }
+
+    /* سربرگ: فقط نشان AW */
+    .header .brand {
+      gap: 0;
+    }
+
+    .header .brand > span:not(.brand-mark) {
+      display: none !important;
     }
 
     .portfolio-page {
@@ -85,7 +94,6 @@
 
     .portfolio-hero p,
     .section-heading p,
-    .feature-card p,
     .work > p,
     .portfolio-cta p {
       color: var(--glass-muted);
@@ -111,20 +119,6 @@
       background: rgba(255,255,255,.035);
       color: #d6e8ff;
       font-size: 12px;
-    }
-
-    .section-heading {
-      margin: 43px 0 18px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(21px,3vw,29px);
-      margin: 0 0 9px;
-    }
-
-    .section-heading p {
-      margin: 0;
-      font-size: 14px;
     }
 
     .motion-panel {
@@ -180,85 +174,18 @@
       line-height: 1.9;
     }
 
-    .feature-grid,
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 18px;
+    .section-heading {
+      margin: 38px 0 18px;
     }
 
-    .feature-card {
-      position: relative;
-      overflow: hidden;
-      padding: 24px;
-      scroll-margin-top: 25px;
-      transition: transform .25s ease,border-color .25s ease;
+    .section-heading h2 {
+      font-size: clamp(21px,3vw,29px);
+      margin: 0 0 9px;
     }
 
-    .feature-card:hover,
-    .work:hover {
-      transform: translateY(-4px);
-      border-color: rgba(82,200,255,.5);
-    }
-
-    .feature-card::after {
-      content: "";
-      position: absolute;
-      width: 145px;
-      height: 145px;
-      left: -65px;
-      bottom: -80px;
-      border-radius: 50%;
-      background: rgba(0,157,255,.14);
-      filter: blur(28px);
-      pointer-events: none;
-    }
-
-    .feature-icon {
-      display: grid;
-      place-items: center;
-      width: 55px;
-      height: 55px;
-      margin-bottom: 18px;
-      border-radius: 17px;
-      border: 1px solid rgba(82,200,255,.25);
-      background: rgba(82,200,255,.1);
-      font-size: 26px;
-    }
-
-    .feature-card h3 {
-      margin: 0 0 10px;
-      font-size: 21px;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      margin: 0 0 17px;
-    }
-
-    .feature-list {
-      padding: 0 18px 0 0;
+    .section-heading p {
       margin: 0;
-      color: #d6e8ff;
-      font-size: 13px;
-      line-height: 2.2;
-    }
-
-    .feature-link {
-      display: inline-flex;
-      margin-top: 19px;
-      padding: 10px 15px;
-      border: 1px solid rgba(82,200,255,.3);
-      border-radius: 12px;
-      color: var(--glass-blue);
-      background: rgba(82,200,255,.07);
-      text-decoration: none;
-      font-size: 13px;
-      transition: background .2s ease;
-    }
-
-    .feature-link:hover {
-      background: rgba(82,200,255,.15);
+      font-size: 14px;
     }
 
     .portfolio-tools {
@@ -288,12 +215,23 @@
       box-shadow: 0 0 20px rgba(0,157,255,.08);
     }
 
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 18px;
+    }
+
     .work {
       min-width: 0;
       overflow: hidden;
       padding: 16px;
       transition: transform .25s ease,border-color .25s ease;
       scroll-margin-top: 25px;
+    }
+
+    .work:hover {
+      transform: translateY(-4px);
+      border-color: rgba(82,200,255,.5);
     }
 
     .work[hidden] {
@@ -366,9 +304,26 @@
       line-height: 2;
     }
 
+    .feature-link {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 10px 15px;
+      border: 1px solid rgba(82,200,255,.3);
+      border-radius: 12px;
+      color: var(--glass-blue);
+      background: rgba(82,200,255,.07);
+      text-decoration: none;
+      font-size: 13px;
+      transition: background .2s ease;
+    }
+
+    .feature-link:hover {
+      background: rgba(82,200,255,.15);
+    }
+
     .project-status {
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 12px;
       color: #c5d5e9;
       font-size: 11px;
     }
@@ -409,7 +364,6 @@
     }
 
     @media (max-width:650px) {
-      .feature-grid,
       .portfolio-grid {
         grid-template-columns: minmax(0,1fr);
       }
@@ -423,17 +377,12 @@
         padding: 12px;
       }
 
-      .feature-card {
-        padding: 20px;
-      }
-
       .portfolio-filter {
         flex: 1 1 auto;
       }
     }
 
     @media (prefers-reduced-motion:reduce) {
-      .feature-card,
       .work,
       .portfolio-filter,
       .feature-link {
@@ -446,9 +395,8 @@
 <body>
 
 <header class="header" id="header">
-  <a class="brand" href="index.html" aria-label="صفحه اصلی ALIREZA WEB">
+  <a class="brand" href="index.html" aria-label="صفحه اصلی">
     <span class="brand-mark">AW</span>
-    <span>ALIREZA WEB</span>
   </a>
 
   <button class="menu-btn" id="menuBtn" type="button"
@@ -471,93 +419,50 @@
   <section class="portfolio-hero glass-panel">
     <span class="eyebrow">✦ PORTFOLIO / PROJECTS</span>
 
-    <h1>دنیای پروژه‌های <span>ALIREZA WEB</span></h1>
+    <h1>نمونه‌کارها و خدمات <span>ALIREZA WEB</span></h1>
 
     <p>
-      اینجا مجموعه‌ای از پروژه‌ها، ایده‌ها و زمینه‌های فعالیت من در طراحی وب،
-      هویت بصری، گرافیک، فناوری و خدمات مرتبط با PS4 را می‌بینی.
-      این صفحه به‌مرور با نمونه‌کارهای واقعی و تصاویر نهایی کامل‌تر می‌شود.
+      مجموعه‌ای از پروژه‌ها و زمینه‌های فعالیت من در طراحی وب،
+      هویت بصری، گرافیک، خدمات فناوری و PS4؛ همه در یک بخش منظم.
     </p>
 
     <div class="hero-tags">
       <span>طراحی وب</span>
       <span>هویت بصری</span>
-      <span>طراحی گرافیک</span>
-      <span>خدمات فناوری</span>
+      <span>گرافیک</span>
+      <span>فناوری</span>
       <span>PS4 Gaming</span>
     </div>
   </section>
 
-  <!-- لوگوموشن فقط در صفحه نمونه‌کارها -->
   <section class="motion-panel glass-panel" aria-labelledby="motion-title">
     <div class="motion-heading">
       <h2 id="motion-title">معرفی برند</h2>
-      <span class="status-chip">ALIREZA WEB · MOTION</span>
+      <span class="status-chip">AW · MOTION</span>
     </div>
 
     <div class="motion-frame">
       <video class="portfolio-motion-video"
         autoplay muted loop playsinline preload="metadata"
-        aria-label="ویدیوی معرفی برند ALIREZA WEB">
+        aria-label="ویدیوی معرفی برند">
         <source src="logo-motion.mp4" type="video/mp4">
         مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
       </video>
     </div>
 
     <p class="motion-caption">
-      هویت دیجیتال ALIREZA WEB؛ ترکیبی از فناوری، طراحی و خلاقیت.
+      هویت دیجیتال AW؛ ترکیبی از فناوری، طراحی و خلاقیت.
     </p>
   </section>
 
-  <div class="section-heading">
-    <h2>زمینه‌های تخصصی</h2>
-    <p>معرفی هویت برند و بخش اختصاصی خدمات PS4.</p>
-  </div>
-
-  <section class="feature-grid" aria-label="بخش‌های ویژه نمونه‌کارها">
-
-    <article class="feature-card glass-panel" id="brand-identity">
-      <div class="feature-icon" aria-hidden="true">✦</div>
-      <span class="work-category">BRAND IDENTITY</span>
-      <h3>هویت بصری ALIREZA WEB</h3>
-      <p>
-        مسیری برای ایجاد ظاهر هماهنگ و حرفه‌ای برند؛ از لوگو و رنگ‌ها
-        تا بنرها و محتوای شبکه‌های اجتماعی.
-      </p>
-      <ul class="feature-list">
-        <li>طراحی و توسعه هویت برند</li>
-        <li>پالت رنگی مشکی و آبی</li>
-        <li>قالب‌های تبلیغاتی و دیجیتال</li>
-      </ul>
-      <a class="feature-link" href="#work-identity">مشاهده نمونه‌کارها ←</a>
-    </article>
-
-    <article class="feature-card glass-panel" id="ps4-services">
-      <div class="feature-icon" aria-hidden="true">🎮</div>
-      <span class="work-category">PS4 GAMING</span>
-      <h3>خدمات و پروژه‌های PS4</h3>
-      <p>
-        معرفی فعالیت‌های مرتبط با PS4، محتوای گیمینگ، معرفی بازی‌ها
-        و خدمات قابل ارائه.
-      </p>
-      <ul class="feature-list">
-        <li>معرفی خدمات و فعالیت‌های گیمینگ</li>
-        <li>محتوای گرافیکی مخصوص بازی</li>
-        <li>افزودن نمونه‌های واقعی در ادامه</li>
-      </ul>
-      <a class="feature-link" href="#work-ps4">مشاهده بخش PS4 ←</a>
-    </article>
-
-  </section>
-
   <div class="section-heading" id="all-projects">
-    <h2>گالری نمونه‌کارها</h2>
-    <p>دسته موردنظرت رو انتخاب کن تا پروژه‌های مرتبط نمایش داده بشن.</p>
+    <h2>همه نمونه‌کارها و خدمات</h2>
+    <p>دسته‌بندی دلخواهت رو انتخاب کن تا موارد مرتبط نمایش داده بشن.</p>
   </div>
 
   <div class="portfolio-tools" role="group" aria-label="فیلتر نمونه‌کارها">
     <button class="portfolio-filter active" type="button"
-      data-filter="all" aria-pressed="true">همه پروژه‌ها</button>
+      data-filter="all" aria-pressed="true">همه موارد</button>
     <button class="portfolio-filter" type="button"
       data-filter="web" aria-pressed="false">طراحی وب</button>
     <button class="portfolio-filter" type="button"
@@ -569,7 +474,7 @@
   </div>
 
   <section class="portfolio-grid" id="portfolioGrid"
-    aria-label="پروژه‌های نمونه‌کار">
+    aria-label="فهرست نمونه‌کارها و خدمات">
 
     <article class="work glass-panel" data-category="web" id="work-website">
       <div class="work-art">
@@ -579,14 +484,14 @@
       <span class="work-category">طراحی وب</span>
       <h3>وب‌سایت ALIREZA WEB</h3>
       <p>
-        وب‌سایت معرفی خدمات دیجیتال، طراحی وب و فعالیت‌های فناوری با
-        ظاهر تیره و جزئیات آبی.
+        وب‌سایت معرفی خدمات دیجیتال با طراحی تیره، جزئیات آبی
+        و صفحات مختلف برای معرفی فعالیت‌ها.
       </p>
       <details class="project-details">
         <summary>جزئیات پروژه</summary>
         <p>
-          وب‌سایت شامل صفحه اصلی، معرفی خدمات، درباره من، تماس و نمونه‌کارهاست.
-          این پروژه در حال توسعه و به‌روزرسانی است.
+          این پروژه شامل صفحه اصلی، خدمات، درباره من، تماس،
+          رزومه و بخش نمونه‌کارهاست و به‌مرور توسعه پیدا می‌کند.
         </p>
         <a class="feature-link" href="index.html">مشاهده وب‌سایت ←</a>
       </details>
@@ -595,44 +500,44 @@
 
     <article class="work glass-panel" data-category="graphic" id="work-identity">
       <div class="work-art">
-        <strong>IDENTITY</strong>
+        <strong>AW IDENTITY</strong>
         <span>LOGO · COLOR · BRAND</span>
       </div>
       <span class="work-category">هویت بصری</span>
-      <h3>هویت بصری ALIREZA WEB</h3>
+      <h3>هویت بصری برند AW</h3>
       <p>
-        طراحی هویتی هماهنگ برای برند با تمرکز بر رنگ‌های تیره،
-        آبی و سبک مدرن.
+        هماهنگی لوگو، رنگ‌های مشکی و آبی و سبک بصری
+        برای معرفی حرفه‌ای برند در فضای دیجیتال.
       </p>
       <details class="project-details">
         <summary>جزئیات پروژه</summary>
         <p>
-          این کارت برای معرفی پروژه هویت بصری است. تصاویر نهایی لوگو،
-          بنرها و خروجی‌های طراحی باید به آن اضافه شوند.
+          این بخش برای نمایش لوگو، بنرها و طرح‌های نهایی برند آماده شده است.
+          تصاویر نهایی را می‌توان بعداً به این کارت اضافه کرد.
         </p>
       </details>
-      <span class="project-status">وضعیت: نیازمند افزودن خروجی‌های نهایی</span>
+      <span class="project-status">وضعیت: آماده تکمیل با تصاویر نهایی</span>
     </article>
 
     <article class="work glass-panel" data-category="graphic" id="work-gaming-graphic">
       <div class="work-art">
-        <strong>ALI / GAME</strong>
-        <span>GAMING GRAPHICS</span>
+        <strong>GAME DESIGN</strong>
+        <span>POSTER · BANNER · SOCIAL</span>
       </div>
-      <span class="work-category">گرافیک و بازی</span>
-      <h3>محتوای گرافیکی خدمات بازی</h3>
+      <span class="work-category">گرافیک</span>
+      <h3>طراحی پوستر و بنر</h3>
       <p>
-        زمینه‌ای برای نمایش پوسترها، بنرها و طرح‌های تبلیغاتی مرتبط
-        با خدمات گیمینگ.
+        طراحی محتوای تصویری برای معرفی خدمات، انتشار در شبکه‌های اجتماعی
+        و ساخت بنرهای تبلیغاتی.
       </p>
       <details class="project-details">
         <summary>جزئیات پروژه</summary>
         <p>
-          این بخش برای نمونه‌های گرافیکی بازی در نظر گرفته شده است؛
-          تصاویر واقعی پس از آماده‌شدن طرح‌ها اضافه می‌شوند.
+          نمونه‌های واقعی پوستر، بنر و طرح‌های گرافیکی پس از آماده‌شدن
+          در این قسمت قرار می‌گیرند.
         </p>
       </details>
-      <span class="project-status">وضعیت: نیازمند افزودن تصاویر</span>
+      <span class="project-status">وضعیت: آماده افزودن نمونه‌ها</span>
     </article>
 
     <article class="work glass-panel" data-category="tech" id="work-tech">
@@ -640,17 +545,17 @@
         <strong>TECH</strong>
         <span>COMPUTER · SOFTWARE · SUPPORT</span>
       </div>
-      <span class="work-category">خدمات فناوری</span>
-      <h3>خدمات نرم‌افزاری و کامپیوتری</h3>
+      <span class="work-category">فناوری</span>
+      <h3>خدمات کامپیوتری و نرم‌افزاری</h3>
       <p>
-        معرفی خدمات کامپیوتری، نصب نرم‌افزار و پشتیبانی فنی در قالب
-        یک مجموعه منظم.
+        معرفی خدمات نصب نرم‌افزار، امور کامپیوتری و پشتیبانی فنی
+        در قالب یک مجموعه منظم.
       </p>
       <details class="project-details">
-        <summary>جزئیات پروژه</summary>
+        <summary>جزئیات خدمات</summary>
         <p>
-          این قسمت برای نمایش نمونه‌های واقعی خدمات، تصاویر مراحل کار
-          و توضیحات هر پروژه آماده شده است.
+          تصاویر و توضیحات نمونه‌های واقعی خدمات را می‌توان در آینده
+          به این قسمت اضافه کرد.
         </p>
       </details>
       <span class="project-status">وضعیت: آماده تکمیل</span>
@@ -659,40 +564,38 @@
     <article class="work glass-panel" data-category="ps4" id="work-ps4">
       <div class="work-art">
         <strong>PS4</strong>
-        <span>PS4 GAMING</span>
+        <span>GAMING SERVICES</span>
       </div>
-      <span class="work-category">خدمات PS4</span>
+      <span class="work-category">PS4 Gaming</span>
       <h3>خدمات و فعالیت‌های PS4</h3>
       <p>
-        بخش اختصاصی معرفی خدمات و فعالیت‌های گیمینگ PS4
-        در مجموعه ALIREZA WEB.
+        معرفی فعالیت‌های مرتبط با PS4 و محتوای گیمینگ
+        در مجموعه خدمات دیجیتال.
       </p>
       <details class="project-details">
-        <summary>جزئیات پروژه</summary>
+        <summary>جزئیات خدمات</summary>
         <p>
-          در این قسمت می‌توان خدمات واقعی، تصاویر محیط کار، معرفی بازی‌ها
-          یا نمونه‌های محتوای گیمینگ را نمایش داد. جزئیات پس از مشخص‌شدن
-          خدمات قابل ارائه تکمیل می‌شوند.
+          این بخش برای نمایش خدمات قابل ارائه و تصاویر واقعی
+          مرتبط با فعالیت‌های PS4 در نظر گرفته شده است.
         </p>
       </details>
-      <span class="project-status">وضعیت: آماده تکمیل با نمونه‌های واقعی</span>
+      <span class="project-status">وضعیت: آماده تکمیل</span>
     </article>
 
   </section>
 
   <aside class="portfolio-note glass-panel">
-    <strong>یادداشت:</strong>
-    این صفحه برای نمایش پروژه‌های موجود و گسترش مجموعه آماده شده است.
-    کارت‌های گرافیکی فعلی طرح‌های نمایشی هستند؛ برای نمایش نمونه‌کار نهایی،
-    تصاویر واقعی هر پروژه را اضافه کن.
+    <strong>نکته:</strong>
+    کارت‌های فعلی معرفی زمینه‌های فعالیت هستند. برای تبدیل آن‌ها به
+    نمونه‌کارهای واقعی، تصاویر نهایی هر پروژه را اضافه می‌کنیم.
   </aside>
 
   <section class="portfolio-cta glass-panel">
     <h2>پروژه‌ای در ذهن داری؟</h2>
     <p>
-      برای آشنایی با خدمات و مطرح‌کردن درخواستت، از صفحه تماس با من استفاده کن.
+      برای آشنایی با خدمات و مطرح‌کردن درخواستت، از صفحه تماس استفاده کن.
     </p>
-    <a href="contact.html">ارتباط با ALIREZA WEB ←</a>
+    <a href="contact.html">ارتباط با ما ←</a>
   </section>
 
 </main>
@@ -723,11 +626,9 @@
       });
 
       projects.forEach((project) => {
-        const matches =
-          category === "all" ||
-          project.dataset.category === category;
-
-        project.hidden = !matches;
+        project.hidden =
+          category !== "all" &&
+          project.dataset.category !== category;
       });
     });
   });
