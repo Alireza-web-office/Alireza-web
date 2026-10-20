@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEON WORLD | ALIREZA WEB</title>
+<style>
+  :root { --cyan:#00eaff; --blue:#1687ff; --pink:#ff2bd6; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#030611; color:#eafaff; font-family:Tahoma,Arial,sans-serif; }
+  canvas { display:block; width:100%; height:100%; }
+  #hud { position:fixed; inset:0; pointer-events:none; }
+  .topbar { position:absolute; top:18px; left:18px; right:18px; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+  .brand { direction:ltr; text-align:left; letter-spacing:2px; font-weight:900; font-size:clamp(15px,2vw,23px); color:#fff; text-shadow:0 0 12px #00d9ff; }
+  .brand small { display:block; margin-top:5px; font-size:10px; letter-spacing:3px; color:#70eaff; }
+  .badge { direction:rtl; border:1px solid #00d9ff88; background:#061425bb; padding:9px 12px; border-radius:10px; box-shadow:0 0 18px #00cfff22; font-size:12px; }
+  #help { position:absolute; bottom:18px; right:18px; width:min(340px,calc(100vw - 36px)); padding:14px 16px; background:linear-gradient(135deg,#07182be8,#08091be8); border:1px solid #00d9ff66; border-radius:14px; box-shadow:0 0 28px #00bfff1c; line-height:1.9; font-size:12px; }
+  #help strong { color:#00eaff; font-size:13px; }
+  .keys { display:inline-block; min-width:25px; text-align:center; padding:0 6px; border:1px solid #64dfff88; border-radius:5px; background:#0b2b40; color:#fff; margin:0 2px; }
+  #crosshair { position:absolute; left:50%; top:50%; width:14px; height:14px; transform:translate(-50%,-50%); opacity:.9; }
+  #crosshair:before,#crosshair:after { content:""; position:absolute; background:#a8f8ff; box-shadow:0 0 7px #00dfff; }
+  #crosshair:before { width:14px; height:1px; top:6px; left:0; }
+  #crosshair:after { width:1px; height:14px; left:6px; top:0; }
+  #start { pointer-events:auto; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:radial-gradient(ellipse at center,#071a35b8,#02040de8 72%); }
+  .panel { width:min(520px,calc(100vw - 34px)); padding:30px 25px; border:1px solid #00dfff88; border-radius:20px; background:linear-gradient(145deg,#07182bee,#07091bee); box-shadow:0 0 55px #00aaff20,inset 0 0 25px #00bfff0b; text-align:center; }
+  .logo { direction:ltr; font-weight:1000; font-size:clamp(31px,7vw,56px); line-height:1.15; color:#fff; letter-spacing:3px; text-shadow:0 0 10px #00eaff,0 0 28px #007bff; }
+  .logo span { color:#00eaff; }
+  .sub { color:#9bd9ef; margin:12px 0 22px; font-size:13px; line-height:1.9; }
+  button { cursor:pointer; border:0; border-radius:10px; padding:13px 22px; font:700 14px Tahoma,Arial; color:#00101b; background:linear-gradient(90deg,#00eaff,#4e8dff); box-shadow:0 0 22px #00d9ff55; }
+  button:hover { filter:brightness(1.12); transform:translateY(-1px); }
+  .note { color:#678ca8; font-size:10px; margin-top:17px; line-height:1.8; }
+  #toast { position:absolute; top:88px; left:50%; transform:translateX(-50%); background:#041526d9; border:1px solid #00dfff66; border-radius:9px; padding:8px 13px; font-size:11px; color:#bdf8ff; opacity:0; transition:opacity .25s; }
+  #toast.show { opacity:1; }
+  @media(max-width:600px){ .topbar{top:10px;left:10px;right:10px}.badge{font-size:10px;padding:7px 9px}#help{font-size:11px;bottom:10px;right:10px}.brand small{letter-spacing:1px} }
+</style>
+</head>
+<body>
+<div id="hud">
+  <div class="topbar">
+    <div class="brand">NEON WORLD<small>AN ALIREZA WEB EXPERIENCE</small></div>
+    <div class="badge">منطقه: <b style="color:#00eaff">NEON CITY</b>　|　نسخه آزمایشی 1.0</div>
+  </div>
+  <div id="crosshair"></div>
+  <div id="toast">برای آزادکردن نشانگر، کلید ESC را بزن.</div>
+  <div id="help">
+    <strong>راهنمای گشت‌وگذار</strong><br>
+    حرکت: <span class="keys">W</span><span class="keys">A</span><span class="keys">S</span><span class="keys">D</span>
+    &nbsp; دویدن: <span class="keys">Shift</span><br>
+    نگاه‌کردن: حرکت موس &nbsp; | &nbsp; آزادکردن موس: <span class="keys">ESC</span><br>
+    <span style="color:#7fb7d0">روی صفحه کلیک کن و وارد شهر شو.</span>
+  </div>
+  <div id="start">
+    <div class="panel">
+      <div class="logo">NEON <span>WORLD</span></div>
+      <div class="sub">یک شهر سه‌بعدی نئونی برای گشت‌وگذار آزاد.<br>به خیابان‌های آینده خوش آمدی.</div>
+      <button id="enter">ورود به شهر　↗</button>
+      <div class="note">برای اجرای صحنه سه‌بعدی، اتصال اینترنت جهت بارگیری Three.js لازم است.<br>بهتر است روی لپ‌تاپ و با مرورگر به‌روز اجرا شود.</div>
+    </div>
+  </div>
+</div>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x030611);
+scene.fog = new THREE.FogExp2(0x050a19, 0.0105);
+
+const camera = new THREE.PerspectiveCamera(74, innerWidth / innerHeight, 0.1, 500);
+camera.position.set(0, 1.72, 11);
+
+const renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+renderer.setSize(innerWidth, innerHeight);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.15;
+document.body.appendChild(renderer.domElement);
+
+scene.add(new THREE.HemisphereLight(0x6acfff, 0x080b20, 1.25));
+const moonLight = new THREE.DirectionalLight(0x5a9cff, 1.0);
+moonLight.position.set(-35, 60, -25); scene.add(moonLight);
+
+function mat(color, emissive=0x000000, intensity=0) {
+  return new THREE.MeshStandardMaterial({ color, emissive, emissiveIntensity:intensity, roughness:0.78, metalness:0.18 });
+}
+const groundMat = mat(0x080d1b);
+const roadMat = mat(0x090d19);
+const cyanMat = new THREE.MeshBasicMaterial({ color:0x00dfff });
+const blueMat = new THREE.MeshBasicMaterial({ color:0x246bff });
+const pinkMat = new THREE.MeshBasicMaterial({ color:0xff28d7 });
+const whiteGlow = new THREE.MeshBasicMaterial({ color:0x9cf7ff });
+
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(260,260), groundMat);
+ground.rotation.x = -Math.PI/2; ground.position.y=-0.08; scene.add(ground);
+
+// Main avenue and sidewalks
+const road = new THREE.Mesh(new THREE.PlaneGeometry(18,220), roadMat);
+road.rotation.x=-Math.PI/2; road.position.set(0,0.005,-65); scene.add(road);
+function box(w,h,d,material,x,y,z, parent=scene) {
+  const m = new THREE.Mesh(new THREE.BoxGeometry(w,h,d), material);
+  m.position.set(x,y,z); parent.add(m); return m;
+}
+box(0.12,0.025,220,cyanMat,-8.8,0.03,-65);
+box(0.12,0.025,220,blueMat,8.8,0.03,-65);
+for(let z=25; z>-180; z-=9) {
+  box(0.16,0.025,4.2,whiteGlow,0,0.035,z);
+}
+for (const x of [-10.5,10.5]) {
+  box(3,0.12,220,mat(0x111b2c),x,0.01,-65);
+  box(0.06,0.08,220,cyanMat,x+(x<0?1.45:-1.45),0.08,-65);
+}
+
+// Neon-lit futuristic buildings, arranged along avenue
+const buildingMats = [mat(0x10192c),mat(0x11152b),mat(0x142038),mat(0x17132c),mat(0x0b2030)];
+let seed=827;
+function rand(){ seed=(seed*1664525+1013904223)>>>0; return seed/4294967296; }
+function makeBuilding(x,z,w,h,d,index) {
+  const group = new THREE.Group(); group.position.set(x,0,z); scene.add(group);
+  const body = new THREE.Mesh(new THREE.BoxGeometry(w,h,d),buildingMats[index%buildingMats.length]);
+  body.position.y=h/2; group.add(body);
+  const edgeMat = index%4===0 ? pinkMat : (index%3===0 ? blueMat : cyanMat);
+  // Fine luminous vertical corner strips
+  for(const sx of [-w/2+0.07,w/2-0.07]) {
+    const strip = new THREE.Mesh(new THREE.BoxGeometry(0.055,h,0.055),edgeMat);
+    strip.position.set(sx,h/2,d/2+0.025); group.add(strip);
+  }
+  const roof = new THREE.Mesh(new THREE.BoxGeometry(w+0.16,0.07,d+0.16),mat(0x182e49,0x006dff,0.65));
+  roof.position.y=h+0.02; group.add(roof);
+  // Window bands on front
+  const rows=Math.min(16,Math.floor(h/2.7));
+  const cols=Math.min(7,Math.floor(w/1.5));
+  for(let r=0;r<rows;r++){
+    for(let c=0;c<cols;c++){
+      if(rand()<0.19) continue;
+      const wm = rand()<0.5 ? new THREE.MeshBasicMaterial({color:rand()<0.5?0x1b9dff:0x00eaff}) : new THREE.MeshBasicMaterial({color:0x542a94});
+      const win=new THREE.Mesh(new THREE.PlaneGeometry(0.45,0.72),wm);
+      win.position.set(-w/2+0.75+c*(w-1.2)/Math.max(1,cols-1),1.35+r*2.3,d/2+0.035);
+      group.add(win);
+    }
+  }
+  // Side accent on silhouette
+  const sideStrip=new THREE.Mesh(new THREE.BoxGeometry(0.045,h,0.045),edgeMat);
+  sideStrip.position.set(w/2+0.025,h/2,0); group.add(sideStrip);
+  return group;
+}
+for(let z=18; z>-178; z-=12) {
+  for(const side of [-1,1]) {
+    const x=side*(15+rand()*10);
+    const w=5+rand()*7, h=12+rand()*35, d=7+rand()*8;
+    makeBuilding(x,z+(rand()-.5)*5,w,h,d,Math.floor(rand()*10));
+  }
+}
+// A few landmark towers closer to the avenue
+makeBuilding(-15,-32,8,43,9,2);
+makeBuilding(15,-47,7,54,8,3);
+makeBuilding(-18,-83,9,49,10,1);
+makeBuilding(17,-112,8,62,9,4);
+
+// Floating holographic signs
+function sign(text,x,y,z,color=0x00eaff) {
+  const canvas=document.createElement('canvas'); canvas.width=512; canvas.height=128;
+  const ctx=canvas.getContext('2d');
+  ctx.fillStyle='rgba(2,10,28,0.78)'; ctx.fillRect(0,0,512,128);
+  ctx.strokeStyle='#'+color.toString(16).padStart(6,'0'); ctx.lineWidth=5; ctx.strokeRect(4,4,504,120);
+  ctx.font='bold 48px Arial'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillStyle='#'+color.toString(16).padStart(6,'0'); ctx.shadowColor=ctx.fillStyle; ctx.shadowBlur=18; ctx.fillText(text,256,64);
+  const texture=new THREE.CanvasTexture(canvas);
+  const mesh=new THREE.Mesh(new THREE.PlaneGeometry(7,1.75),new THREE.MeshBasicMaterial({map:texture,transparent:true,side:THREE.DoubleSide}));
+  mesh.position.set(x,y,z); mesh.lookAt(0,y,0); scene.add(mesh);
+  return mesh;
+}
+sign('NEON DISTRICT',-13,12,-25,0x00eaff);
+sign('FUTURE // 2089',13,15,-66,0xff2bd6);
+sign('ALIREZA WEB',-14,11,-105,0x3f8dff);
+
+// Street lamps with glowing cyan heads
+for(let z=18;z>-170;z-=18){
+  for(const side of [-1,1]){
+    const x=side*10.8;
+    const pole=mat(0x1a3148,0x002f5a,0.45);
+    box(0.12,4.6,0.12,pole,x,2.3,z);
+    box(0.85,0.12,0.16,cyanMat,x-side*0.25,4.55,z);
+  }
+}
+
+// Distant mountains / island silhouettes
+const mountainMat=mat(0x101a36,0x081d48,0.25);
+for(let i=0;i<24;i++){
+  const a=(i/24)*Math.PI*2;
+  const radius=105+rand()*18;
+  const h=14+rand()*28;
+  const r=9+rand()*15;
+  const geo=new THREE.ConeGeometry(r,h,5);
+  const m=new THREE.Mesh(geo,mountainMat);
+  m.position.set(Math.cos(a)*radius,h/2-1,Math.sin(a)*radius-45);
+  m.rotation.y=rand()*Math.PI; scene.add(m);
+  const edge=new THREE.Mesh(new THREE.EdgesGeometry(geo),new THREE.LineBasicMaterial({color:0x183f87,transparent:true,opacity:.55}));
+  edge.position.copy(m.position); edge.rotation.copy(m.rotation); scene.add(edge);
+}
+
+// Moon
+const moon = new THREE.Mesh(new THREE.SphereGeometry(5,20,16),new THREE.MeshBasicMaterial({color:0x9bdcff}));
+moon.position.set(-48,48,-130); scene.add(moon);
+const moonHalo=new THREE.Mesh(new THREE.SphereGeometry(7.4,20,16),new THREE.MeshBasicMaterial({color:0x146bff,transparent:true,opacity:.09,side:THREE.BackSide}));
+moonHalo.position.copy(moon.position); scene.add(moonHalo);
+
+// Stars
+const starGeo=new THREE.BufferGeometry(); const starPos=[];
+for(let i=0;i<900;i++){
+  starPos.push((rand()-.5)*250,15+rand()*100,-180+rand()*260);
+}
+starGeo.setAttribute('position',new THREE.Float32BufferAttribute(starPos,3));
+scene.add(new THREE.Points(starGeo,new THREE.PointsMaterial({color:0x9cecff,size:0.42,sizeAttenuation:true,transparent:true,opacity:.85})));
+
+// Hologram particles, deliberately sparse for performance
+const particleGeo=new THREE.BufferGeometry(); const pp=[];
+for(let i=0;i<160;i++) pp.push((rand()-.5)*80,rand()*28-1,-rand()*180);
+particleGeo.setAttribute('position',new THREE.Float32BufferAttribute(pp,3));
+const particles=new THREE.Points(particleGeo,new THREE.PointsMaterial({color:0x00dfff,size:0.12,transparent:true,opacity:.65}));
+scene.add(particles);
+
+// Player controls
+let yaw=0, pitch=0, locked=false;
+const keys={};
+const player={x:0,y:1.72,z:11, vy:0, grounded:true};
+camera.position.set(player.x,player.y,player.z);
+const start=document.getElementById('start');
+const toast=document.getElementById('toast');
+document.getElementById('enter').addEventListener('click',()=>renderer.domElement.requestPointerLock());
+renderer.domElement.addEventListener('click',()=>{ if(!locked) renderer.domElement.requestPointerLock(); });
+document.addEventListener('pointerlockchange',()=>{
+  locked=document.pointerLockElement===renderer.domElement;
+  start.style.display=locked?'none':'flex';
+  toast.classList.toggle('show',!locked);
+});
+document.addEventListener('mousemove',e=>{
+  if(!locked) return;
+  yaw-=e.movementX*0.0022;
+  pitch-=e.movementY*0.0018;
+  pitch=Math.max(-1.35,Math.min(1.35,pitch));
+});
+document.addEventListener('keydown',e=>{
+  keys[e.code]=true;
+  if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)) e.preventDefault();
+  if(e.code==='Space' && player.grounded){player.vy=7.0;player.grounded=false;}
+});
+document.addEventListener('keyup',e=>keys[e.code]=false);
+window.addEventListener('blur',()=>{for(const k in keys)keys[k]=false;});
+
+const clock=new THREE.Clock();
+function animate(){
+  requestAnimationFrame(animate);
+  const dt=Math.min(clock.getDelta(),0.04);
+  const forward=new THREE.Vector3(-Math.sin(yaw),0,-Math.cos(yaw));
+  const right=new THREE.Vector3(Math.cos(yaw),0,-Math.sin(yaw));
+  const move=new THREE.Vector3();
+  if(keys.KeyW||keys.ArrowUp) move.add(forward);
+  if(keys.KeyS||keys.ArrowDown) move.sub(forward);
+  if(keys.KeyD||keys.ArrowRight) move.add(right);
+  if(keys.KeyA||keys.ArrowLeft) move.sub(right);
+  if(move.lengthSq()>0) move.normalize().multiplyScalar((keys.ShiftLeft||keys.ShiftRight?13:7)*dt);
+  player.x+=move.x; player.z+=move.z;
+  // Keep the player within the playable city
+  player.x=Math.max(-7.1,Math.min(7.1,player.x));
+  // Jump and gravity
+  if(!player.grounded){player.vy-=18*dt;player.y+=player.vy*dt;if(player.y<=1.72){player.y=1.72;player.vy=0;player.grounded=true;}}
+  if(keys.Space && player.grounded){player.vy=7;player.grounded=false;}
+  camera.position.set(player.x,player.y,player.z);
+  camera.rotation.order='YXZ'; camera.rotation.y=yaw; camera.rotation.x=pitch;
+  // subtle animated pulse on hologram particles and city ambience
+  particles.rotation.y+=dt*0.012;
+  renderer.render(scene,camera);
+}
+animate();
+
+addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setPixelRatio(Math.min(devicePixelRatio,1.5)); renderer.setSize(innerWidth,innerHeight);
+});
+</script>
+</body>
+</html>
