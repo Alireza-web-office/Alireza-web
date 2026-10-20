@@ -26,15 +26,6 @@
       color: var(--glass-text);
     }
 
-    /* سربرگ: فقط نشان AW */
-    .header .brand {
-      gap: 0;
-    }
-
-    .header .brand > span:not(.brand-mark) {
-      display: none !important;
-    }
-
     .portfolio-page {
       width: min(1120px, 92%);
       margin-inline: auto;
@@ -395,23 +386,34 @@
 <body>
 
 <header class="header" id="header">
-  <a class="brand" href="index.html" aria-label="صفحه اصلی">
-    <span class="brand-mark">AW</span>
+  <a class="brand" href="index.html">
+    <span>AW</span>
+    <b>ALIREZA WEB</b>
   </a>
 
-  <button class="menu-btn" id="menuBtn" type="button"
-    aria-label="باز کردن منو" aria-expanded="false">☰</button>
+  <button
+    class="icon-btn menu-btn"
+    id="menuBtn"
+    type="button"
+    aria-label="باز کردن منو"
+    aria-controls="nav"
+    aria-expanded="false"
+  >☰</button>
 
   <nav class="nav" id="nav">
     <a href="index.html">خانه</a>
     <a href="services.html">خدمات</a>
-    <a href="portfolio.html" aria-current="page">نمونه‌کارها</a>
+    <a class="active" href="portfolio.html" aria-current="page">نمونه‌کارها</a>
     <a href="about.html">درباره من</a>
     <a href="contact.html">تماس</a>
   </nav>
 
-  <button class="theme-btn" id="themeBtn" type="button"
-    aria-label="تغییر تم">☼</button>
+  <button
+    class="icon-btn theme-btn"
+    id="themeBtn"
+    type="button"
+    aria-label="تغییر حالت"
+  >☾</button>
 </header>
 
 <main class="portfolio-page">
