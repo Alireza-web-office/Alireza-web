@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ALIREZA WEB | خدمات وب و فناوری">
+  <meta name="description" content="ALIREZA WEB | خدمات وب، فناوری و بازی‌های NEON CITY و NEON WORLD">
   <meta name="google-site-verification" content="4NI3UCnTscbHDyYcS50nvgtPUrNWBJT9k7e-byq_b2w">
   <meta name="theme-color" content="#080d18">
 
@@ -69,6 +69,57 @@
       pointer-events: none;
     }
 
+    /* بخش بازی‌ها */
+    .games-section .game-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border: 1px solid rgba(53, 186, 255, 0.35);
+      box-shadow: 0 0 18px rgba(22, 139, 255, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .games-section .game-card:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 0 16px rgba(53, 186, 255, 0.2),
+        0 0 30px rgba(22, 139, 255, 0.12);
+    }
+
+    .game-card .game-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      margin-bottom: 8px;
+      padding: 5px 10px;
+      border: 1px solid rgba(53, 186, 255, 0.3);
+      border-radius: 20px;
+      color: #35baff;
+      font-size: 12px;
+    }
+
+    .game-card .game-symbol {
+      font-size: 36px;
+      line-height: 1.4;
+      margin: 4px 0;
+      filter: drop-shadow(0 0 10px rgba(53, 186, 255, 0.35));
+    }
+
+    .game-card .game-description {
+      flex: 1;
+    }
+
+    .game-card .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+      text-decoration: none;
+    }
+
     @media (max-width: 600px) {
       .hero-card {
         margin-top: 24px;
@@ -86,7 +137,8 @@
 
     @media (prefers-reduced-motion: reduce) {
       .hero-card *,
-      .hero-text * {
+      .hero-text *,
+      .games-section * {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
       }
@@ -199,6 +251,72 @@
           <span class="card-icon">▣</span>
           <h3>خدمات کامپیوتری</h3>
           <p>نصب نرم‌افزار، Office، Photoshop و پشتیبانی.</p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- بازی‌های من -->
+    <section class="section games-section" id="games">
+
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">GAMES • ALIREZA WEB</p>
+          <h2>بازی‌های من</h2>
+        </div>
+      </div>
+
+      <div class="cards">
+
+        <!-- NEON CITY -->
+        <article class="card game-card">
+
+          <span class="game-label">🎮 بازی تحت وب</span>
+
+          <div class="game-symbol" aria-hidden="true">🌃</div>
+
+          <h3>NEON CITY</h3>
+
+          <p class="game-description">
+            وارد یک شهر سه‌بعدی نئونی شو، محیط مرموزش رو کشف کن
+            و در دنیای نورها و سایه‌ها قدم بزن.
+          </p>
+
+          <a
+            class="btn primary"
+            href="neon-city-v4.13.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            اجرای NEON CITY ↗
+          </a>
+
+        </article>
+
+        <!-- NEON WORLD -->
+        <article class="card game-card">
+
+          <span class="game-label">🌍 بازی تحت وب</span>
+
+          <div class="game-symbol" aria-hidden="true">🌌</div>
+
+          <h3>NEON WORLD</h3>
+
+          <p class="game-description">
+            وارد دنیای نئونی خودت شو و محیط سه‌بعدی بازی رو
+            کاوش کن.
+          </p>
+
+          <a
+            class="btn primary"
+            href="neon-world.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            اجرای NEON WORLD ↗
+          </a>
+
         </article>
 
       </div>
