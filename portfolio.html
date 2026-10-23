@@ -1,259 +1,890 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080d19">
-  <meta name="description" content="نمونه‌کارها و خدمات ALIREZA WEB؛ طراحی وب، گرافیک، فناوری و خدمات PS4.">
-  <title>نمونه‌کارها و خدمات | ALIREZA WEB</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d19">
+<meta name="description" content="نمونه‌کارهای ALIREZA WEB در هویت بصری، طراحی وب، گرافیک، فناوری و PS4.">
+<title>نمونه‌کارها | ALIREZA WEB</title>
 
-  <style>
-    :root {
-      --glass-bg: rgba(15, 25, 45, .58);
-      --glass-border: rgba(125, 190, 255, .19);
-      --glass-blue: #52c8ff;
-      --glass-text: #edf6ff;
-      --glass-muted: #a7b8d0;
-    }
+<link rel="stylesheet" href="style.css">
 
-    body {
-      background:
-        radial-gradient(ellipse at 12% 12%, rgba(0,136,255,.17), transparent 38%),
-        radial-gradient(ellipse at 90% 42%, rgba(82,80,255,.12), transparent 35%),
+<style>
+:root {
+    --pb: #55caff;
+    --pt: #edf6ff;
+    --pm: #a7b8d0;
+    --bd: rgba(125,190,255,.2);
+    --gl: rgba(15,25,45,.62);
+}
+
+body {
+    background:
+        radial-gradient(ellipse at 12% 12%,rgba(0,136,255,.16),transparent 38%),
+        radial-gradient(ellipse at 90% 42%,rgba(82,80,255,.12),transparent 35%),
         #080d19;
-      color: var(--glass-text);
+    color: var(--pt);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.portfolio-page {
+    width: min(1120px,92%);
+    margin: auto;
+}
+
+.glass {
+    background: var(--gl);
+    border: 1px solid var(--bd);
+    border-radius: 24px;
+    box-shadow: 0 18px 55px #0003;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.hero {
+    margin: 32px 0 28px;
+    padding: clamp(24px,5vw,48px);
+}
+
+.eyebrow,
+.pill {
+    display: inline-flex;
+    padding: 8px 13px;
+    border: 1px solid #55caff55;
+    border-radius: 999px;
+    background: #55caff12;
+    color: var(--pb);
+    font-size: 12px;
+}
+
+h1 {
+    font-size: clamp(28px,5vw,44px);
+    line-height: 1.55;
+    margin: 20px 0 12px;
+}
+
+h1 span {
+    color: var(--pb);
+}
+
+.hero p,
+.heading p,
+.category p,
+.work p,
+.note,
+.cta p {
+    color: var(--pm);
+    line-height: 2;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: 0;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.tags span {
+    padding: 7px 11px;
+    border: 1px solid var(--bd);
+    border-radius: 11px;
+    background: #ffffff09;
+    font-size: 12px;
+    color: #d6e8ff;
+}
+
+.heading {
+    margin: 34px 0 18px;
+}
+
+.heading h2 {
+    font-size: clamp(22px,3vw,29px);
+    margin: 0 0 7px;
+}
+
+.heading p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.categories,
+.works {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 17px;
+}
+
+.category {
+    display: block;
+    padding: 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: .22s;
+    overflow: hidden;
+}
+
+.category:hover {
+    transform: translateY(-4px);
+    border-color: #55caff99;
+}
+
+.art {
+    display: flex;
+    min-height: 145px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid #7dbeff30;
+    border-radius: 17px;
+    background:
+        radial-gradient(circle at 50% 30%,#00aaff33,transparent 55%),
+        linear-gradient(135deg,#162543e6,#060c1af2);
+    text-align: center;
+    color: var(--pb);
+    margin-bottom: 15px;
+}
+
+.art strong {
+    font-size: clamp(23px,4vw,31px);
+    letter-spacing: 1px;
+}
+
+.art span {
+    font-size: 11px;
+    color: #c4d8f0;
+}
+
+.category h3,
+.work h3 {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.category p,
+.work p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.open {
+    display: inline-flex;
+    margin-top: 14px;
+    padding: 9px 13px;
+    border: 1px solid #55caff55;
+    border-radius: 11px;
+    background: #55caff12;
+    color: var(--pb);
+    font-size: 12px;
+}
+
+.detail-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 32px 0 18px;
+}
+
+.back {
+    padding: 10px 14px;
+    border: 1px solid var(--bd);
+    border-radius: 12px;
+    color: var(--pb);
+    text-decoration: none;
+    background: #55caff10;
+}
+
+.work {
+    padding: 16px;
+    overflow: hidden;
+}
+
+.work .art {
+    min-height: 170px;
+}
+
+.portfolio-image,
+.video {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    background: #050914;
+    border: 1px solid var(--bd);
+    border-radius: 15px;
+    margin-bottom: 13px;
+}
+
+.video {
+    max-height: 360px;
+}
+
+.work details {
+    margin-top: 13px;
+    padding-top: 12px;
+    border-top: 1px solid var(--bd);
+}
+
+.work summary {
+    cursor: pointer;
+    color: var(--pb);
+    font-size: 13px;
+}
+
+.work details p {
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.note {
+    padding: 16px 19px;
+    margin: 25px 0;
+    font-size: 13px;
+}
+
+.cta {
+    padding: 25px;
+    margin: 30px 0 42px;
+    text-align: center;
+}
+
+.cta h2 {
+    margin: 0 0 8px;
+}
+
+.cta p {
+    margin: 0 auto 17px;
+    max-width: 600px;
+    font-size: 14px;
+}
+
+.cta a {
+    display: inline-flex;
+    padding: 11px 17px;
+    border-radius: 12px;
+    background: #55caff1f;
+    border: 1px solid #55caff66;
+    color: var(--pb);
+    text-decoration: none;
+}
+
+@media(max-width:650px) {
+    .categories,
+    .works {
+        grid-template-columns: minmax(0,1fr);
     }
 
-    .portfolio-page {
-      width: min(1120px, 92%);
-      margin-inline: auto;
+    .hero {
+        margin-top: 22px;
+        padding: 24px 19px;
     }
 
-    .glass-panel {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      box-shadow: 0 18px 55px rgba(0,0,0,.2);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+    .art {
+        min-height: 130px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .category {
+        transition: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header" id="header">
+
+    <a class="brand" href="index.html">
+        <span>AW</span>
+        <b>ALIREZA WEB</b>
+    </a>
+
+    <button
+        class="icon-btn menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="باز کردن منو"
+        aria-controls="nav"
+        aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="nav" id="nav">
+        <a href="index.html">خانه</a>
+        <a href="services.html">خدمات</a>
+        <a class="active" href="portfolio.html" aria-current="page">نمونه‌کارها</a>
+        <a href="about.html">درباره من</a>
+        <a href="contact.html">تماس</a>
+    </nav>
+
+    <button
+        class="icon-btn theme-btn"
+        id="themeBtn"
+        type="button"
+        aria-label="تغییر حالت">
+        ☾
+    </button>
+
+</header>
+
+<main class="portfolio-page">
+
+    <!-- صفحه اصلی دسته‌بندی‌ها -->
+
+    <section class="hero glass" id="homeHero">
+
+        <span class="eyebrow">✦ ALIREZA WEB / PORTFOLIO</span>
+
+        <h1>
+            نمونه‌کارهای
+            <span>ALIREZA WEB</span>
+        </h1>
+
+        <p>
+            نمونه‌کارهای من را در دسته‌بندی‌های مختلف ببین.
+            هر بخش مجموعه اختصاصی خودش را دارد.
+        </p>
+
+        <div class="tags">
+            <span>NEON BLUE</span>
+            <span>GLASS DESIGN</span>
+            <span>WEB & DIGITAL</span>
+        </div>
+
+    </section>
+
+    <section id="categoryHome">
+
+        <div class="heading">
+            <h2>دسته‌بندی نمونه‌کارها</h2>
+            <p>یک دسته را انتخاب کن تا نمونه‌کارهای آن را ببینی.</p>
+        </div>
+
+        <div class="categories">
+
+            <!-- هویت بصری -->
+
+            <a class="category glass"
+               href="portfolio.html?category=identity">
+
+                <div class="art">
+                    <strong>AW IDENTITY</strong>
+                    <span>LOGO · BRAND · MOTION</span>
+                </div>
+
+                <h3>هویت بصری</h3>
+
+                <p>
+                    لوگو، هویت برند، طراحی‌های تصویری و لوگوموشن.
+                </p>
+
+                <span class="open">مشاهده نمونه‌کارها ←</span>
+
+            </a>
+
+            <!-- طراحی وب -->
+
+            <a class="category glass"
+               href="portfolio.html?category=web">
+
+                <div class="art">
+                    <strong>WEB DESIGN</strong>
+                    <span>WEBSITES · UI</span>
+                </div>
+
+                <h3>طراحی وب</h3>
+
+                <p>
+                    وب‌سایت‌ها و پروژه‌های طراحی صفحات اینترنتی.
+                </p>
+
+                <span class="open">مشاهده نمونه‌کارها ←</span>
+
+            </a>
+
+            <!-- طراحی گرافیک -->
+
+            <a class="category glass"
+               href="portfolio.html?category=graphic">
+
+                <div class="art">
+                    <strong>GRAPHIC LAB</strong>
+                    <span>POSTER · BANNER</span>
+                </div>
+
+                <h3>طراحی گرافیک</h3>
+
+                <p>
+                    طراحی پوستر، بنر و محتوای تصویری دیجیتال.
+                </p>
+
+                <span class="open">مشاهده نمونه‌کارها ←</span>
+
+            </a>
+
+            <!-- خدمات و فناوری -->
+
+            <a class="category glass"
+               href="portfolio.html?category=tech">
+
+                <div class="art">
+                    <strong>TECH SUPPORT</strong>
+                    <span>COMPUTER · SOFTWARE</span>
+                </div>
+
+                <h3>خدمات و فناوری</h3>
+
+                <p>
+                    خدمات کامپیوتری، نرم‌افزار و پشتیبانی فنی.
+                </p>
+
+                <span class="open">مشاهده نمونه‌کارها ←</span>
+
+            </a>
+
+            <!-- پلی استیشن -->
+
+            <a class="category glass"
+               href="portfolio.html?category=ps4">
+
+                <div class="art">
+                    <strong>PS4 GAMING</strong>
+                    <span>GAMES · SERVICES</span>
+                </div>
+
+                <h3>PS4</h3>
+
+                <p>
+                    فعالیت‌ها و خدمات مرتبط با پلی‌استیشن ۴.
+                </p>
+
+                <span class="open">مشاهده نمونه‌کارها ←</span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- صفحه اختصاصی هر دسته -->
+
+    <section id="categoryDetail" hidden>
+
+        <div class="detail-top">
+
+            <div class="heading" style="margin:0">
+                <h2 id="detailTitle">نمونه‌کارها</h2>
+                <p id="detailDescription"></p>
+            </div>
+
+            <a class="back" href="portfolio.html">
+                ← بازگشت به همه دسته‌ها
+            </a>
+
+        </div>
+
+        <div class="works" id="detailGrid"></div>
+
+    </section>
+
+    <!-- ارتباط با من -->
+
+    <section class="cta glass">
+
+        <h2>پروژه‌ای در ذهن داری؟</h2>
+
+        <p>
+            برای آشنایی با خدمات و مطرح‌کردن درخواستت،
+            از صفحه تماس استفاده کن.
+        </p>
+
+        <a href="contact.html">ارتباط با من ←</a>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+
+    <p>© 2026 ALIREZA WEB — تمام حقوق محفوظ است.</p>
+
+    <a href="contact.html">ارتباط با من</a>
+
+</footer>
+
+<button
+    id="topBtn"
+    class="top-btn"
+    type="button"
+    aria-label="بازگشت به بالای صفحه">
+    ↑
+</button>
+
+<script src="script.js"></script>
+
+<script>
+(() => {
+
+"use strict";
+
+/* اطلاعات نمونه‌کارها */
+
+const data = {
+
+    /* هویت بصری */
+
+    identity: {
+        title: "هویت بصری",
+
+        desc: "نمونه‌کارهای تصویری و ویدیویی هویت بصری ALIREZA WEB.",
+
+        items: [
+
+            {
+                title: "نمونه‌کار تصویری",
+
+                tag: "هویت بصری",
+
+                image: "file_00000000b4708246b1103e74c6e236e7.png",
+
+                desc: "نمونه‌کار تصویری ALIREZA WEB.",
+
+                detail: "نمونه‌کار تصویری در مجموعه هویت بصری."
+            },
+
+            {
+                title: "لوگوموشن ALIREZA WEB",
+
+                tag: "لوگوموشن",
+
+                video: "logo-motion.mp4",
+
+                desc: "نمایش متحرک لوگوی ALIREZA WEB.",
+
+                detail: "ویدیوی لوگوموشن برند ALIREZA WEB."
+            }
+
+        ]
+    },
+
+    /* طراحی وب */
+
+    web: {
+        title: "طراحی وب",
+
+        desc: "پروژه‌های وب و طراحی صفحات دیجیتال.",
+
+        items: [
+
+            {
+                title: "وب‌سایت ALIREZA WEB",
+
+                tag: "طراحی وب",
+
+                art: "ALIREZA WEB",
+
+                sub: "WEB DESIGN · DIGITAL",
+
+                desc: "وب‌سایت معرفی خدمات دیجیتال با طراحی تیره و جزئیات نئونی آبی.",
+
+                detail: "شامل صفحه خانه، خدمات، درباره من، تماس و نمونه‌کارها.",
+
+                link: "index.html"
+            }
+
+        ]
+    },
+
+    /* طراحی گرافیک */
+
+    graphic: {
+        title: "طراحی گرافیک",
+
+        desc: "مجموعه طراحی‌های گرافیکی و محتوای دیجیتال.",
+
+        items: [
+
+            {
+                title: "طراحی پوستر",
+
+                tag: "پوستر",
+
+                art: "POSTER DESIGN",
+
+                sub: "CREATIVE · DIGITAL",
+
+                desc: "بخش اختصاصی نمایش نمونه‌کارهای پوستر.",
+
+                detail: "با آماده‌شدن نمونه‌های واقعی، تصاویر این بخش اضافه می‌شوند."
+            },
+
+            {
+                title: "طراحی بنر تبلیغاتی",
+
+                tag: "بنر",
+
+                art: "BANNER DESIGN",
+
+                sub: "PROMO · SOCIAL",
+
+                desc: "طرح‌های تبلیغاتی و محتوای تصویری شبکه‌های اجتماعی.",
+
+                detail: "این قسمت برای نمایش طرح‌های نهایی آماده است."
+            }
+
+        ]
+    },
+
+    /* خدمات و فناوری */
+
+    tech: {
+        title: "خدمات و فناوری",
+
+        desc: "فعالیت‌های فنی، کامپیوتری و نرم‌افزاری.",
+
+        items: [
+
+            {
+                title: "خدمات کامپیوتری و نرم‌افزاری",
+
+                tag: "فناوری",
+
+                art: "TECH SUPPORT",
+
+                sub: "COMPUTER · SOFTWARE",
+
+                desc: "معرفی خدمات نصب نرم‌افزار و پشتیبانی فنی.",
+
+                detail: "نمونه‌های تصویری این بخش در آینده قابل اضافه‌شدن هستند."
+            }
+
+        ]
+    },
+
+    /* پلی استیشن ۴ */
+
+    ps4: {
+        title: "PS4",
+
+        desc: "مجموعه فعالیت‌ها و خدمات مرتبط با پلی‌استیشن ۴.",
+
+        items: [
+
+            {
+                title: "خدمات و فعالیت‌های PS4",
+
+                tag: "PS4 Gaming",
+
+                art: "PS4",
+
+                sub: "GAMING SERVICES",
+
+                desc: "بخش اختصاصی خدمات و محتوای مرتبط با PS4.",
+
+                detail: "تصاویر و توضیحات نمونه‌کارهای PS4 را می‌توان به این قسمت اضافه کرد."
+            }
+
+        ]
     }
 
-    .portfolio-hero {
-      position: relative;
-      overflow: hidden;
-      margin: 35px 0 26px;
-      padding: clamp(25px,5vw,55px);
+};
+
+/* تشخیص دسته انتخاب‌شده */
+
+const params = new URLSearchParams(window.location.search);
+
+const key = params.get("category");
+
+const item = data[key];
+
+/* اگر دسته‌ای انتخاب نشده، صفحه اصلی نمایش داده شود */
+
+if (!item) {
+    return;
+}
+
+/* نمایش صفحه دسته‌بندی */
+
+document.getElementById("homeHero").hidden = true;
+
+document.getElementById("categoryHome").hidden = true;
+
+document.getElementById("categoryDetail").hidden = false;
+
+document.title = item.title + " | نمونه‌کارها | ALIREZA WEB";
+
+document.getElementById("detailTitle").textContent = item.title;
+
+document.getElementById("detailDescription").textContent = item.desc;
+
+const grid = document.getElementById("detailGrid");
+
+/* ساخت کارت‌های نمونه‌کار */
+
+item.items.forEach((x) => {
+
+    const card = document.createElement("article");
+
+    card.className = "work glass";
+
+    let visual = "";
+
+    /* اگر نمونه‌کار ویدیویی است */
+
+    if (x.video) {
+
+        const video = document.createElement("video");
+
+        video.className = "video";
+
+        video.controls = true;
+
+        video.autoplay = true;
+
+        video.muted = true;
+
+        video.loop = true;
+
+        video.playsInline = true;
+
+        video.preload = "metadata";
+
+        video.setAttribute("aria-label", x.title);
+
+        const source = document.createElement("source");
+
+        source.src = x.video;
+
+        source.type = "video/mp4";
+
+        video.appendChild(source);
+
+        visual = video;
+
     }
 
-    .portfolio-hero::before {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      left: -80px;
-      top: -100px;
-      border-radius: 50%;
-      background: rgba(0,174,255,.15);
-      filter: blur(35px);
-      pointer-events: none;
+    /* اگر نمونه‌کار تصویری است */
+
+    else if (x.image) {
+
+        const image = document.createElement("img");
+
+        image.className = "portfolio-image";
+
+        image.src = x.image;
+
+        image.alt = x.title;
+
+        image.loading = "lazy";
+
+        visual = image;
+
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      border: 1px solid rgba(82,200,255,.3);
-      border-radius: 999px;
-      background: rgba(82,200,255,.08);
-      color: var(--glass-blue);
-      font-size: 12px;
-      letter-spacing: 1px;
+    /* کارت گرافیکی نمایشی برای بخش‌های دیگر */
+
+    else {
+
+        const art = document.createElement("div");
+
+        art.className = "art";
+
+        const strong = document.createElement("strong");
+
+        strong.textContent = x.art || "";
+
+        const span = document.createElement("span");
+
+        span.textContent = x.sub || "";
+
+        art.appendChild(strong);
+
+        art.appendChild(span);
+
+        visual = art;
+
     }
 
-    .portfolio-hero h1 {
-      margin: 22px 0 14px;
-      font-size: clamp(29px,5vw,48px);
-      line-height: 1.5;
+    /* محتوای کارت */
+
+    const pill = document.createElement("span");
+
+    pill.className = "pill";
+
+    pill.textContent = x.tag;
+
+    const title = document.createElement("h3");
+
+    title.textContent = x.title;
+
+    const description = document.createElement("p");
+
+    description.textContent = x.desc;
+
+    card.appendChild(visual);
+
+    card.appendChild(pill);
+
+    card.appendChild(title);
+
+    card.appendChild(description);
+
+    /* جزئیات بیشتر */
+
+    if (x.detail) {
+
+        const details = document.createElement("details");
+
+        const summary = document.createElement("summary");
+
+        summary.textContent = "جزئیات";
+
+        const detailText = document.createElement("p");
+
+        detailText.textContent = x.detail;
+
+        details.appendChild(summary);
+
+        details.appendChild(detailText);
+
+        card.appendChild(details);
+
     }
 
-    .portfolio-hero h1 span {
-      color: var(--glass-blue);
+    /* لینک وب‌سایت */
+
+    if (x.link) {
+
+        const link = document.createElement("a");
+
+        link.className = "open";
+
+        link.href = x.link;
+
+        link.textContent = "مشاهده وب‌سایت ←";
+
+        card.appendChild(link);
+
     }
 
-    .portfolio-hero p,
-    .section-heading p,
-    .work > p,
-    .portfolio-cta p {
-      color: var(--glass-muted);
-      line-height: 2.1;
-    }
+    grid.appendChild(card);
 
-    .portfolio-hero p {
-      max-width: 680px;
-      margin: 0;
-    }
+});
 
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 25px;
-    }
+})();
+</script>
 
-    .hero-tags span {
-      padding: 8px 12px;
-      border: 1px solid var(--glass-border);
-      border-radius: 12px;
-      background: rgba(255,255,255,.035);
-      color: #d6e8ff;
-      font-size: 12px;
-    }
-
-    .motion-panel {
-      padding: 20px;
-      margin-bottom: 35px;
-    }
-
-    .motion-heading {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
-    }
-
-    .motion-heading h2 {
-      font-size: 18px;
-      margin: 0;
-    }
-
-    .status-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border-radius: 999px;
-      padding: 6px 10px;
-      background: rgba(82,200,255,.09);
-      border: 1px solid rgba(82,200,255,.22);
-      color: var(--glass-blue);
-      font-size: 11px;
-    }
-
-    .motion-frame {
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid var(--glass-border);
-      background: #050914;
-    }
-
-    .portfolio-motion-video {
-      display: block;
-      width: 100%;
-      max-height: 440px;
-      object-fit: contain;
-      margin-inline: auto;
-    }
-
-    .motion-caption {
-      margin: 13px 0 0;
-      color: var(--glass-muted);
-      font-size: 13px;
-      line-height: 1.9;
-    }
-
-    .section-heading {
-      margin: 38px 0 18px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(21px,3vw,29px);
-      margin: 0 0 9px;
-    }
-
-    .section-heading p {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    .portfolio-tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 22px 0;
-    }
-
-    .portfolio-filter {
-      padding: 10px 15px;
-      border-radius: 12px;
-      border: 1px solid var(--glass-border);
-      background: rgba(255,255,255,.035);
-      color: #d6e8ff;
-      font: inherit;
-      font-size: 13px;
-      cursor: pointer;
-      transition: .2s ease;
-    }
-
-    .portfolio-filter:hover,
-    .portfolio-filter.active {
-      border-color: rgba(82,200,255,.6);
-      background: rgba(82,200,255,.14);
-      color: #fff;
-      box-shadow: 0 0 20px rgba(0,157,255,.08);
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 18px;
-    }
-
-    .work {
-      min-width: 0;
-      overflow: hidden;
-      padding: 16px;
-      transition: transform .25s ease,border-color .25s ease;
-      scroll-margin-top: 25px;
-    }
-
-    .work:hover {
-      transform: translateY(-4px);
-      border-color: rgba(82,200,255,.5);
-    }
-
-    .work[hidden] {
-      display: none !important;
-    }
-
-    /* تصویر کارت داخل نمونه‌کار هویت بصری */
-    .work-image-wrap {
-      overflow: hidden;
-      margin: 16px 0 12px;
-      border: 1px solid rgba(125,190,255,.18);
-      border-radius: 17px;
-      background: rgba(5,9,20,.75);
-    }
-
-    .work-image {
-      display: block;
-      width: 100%;
-      max-height: 420px;
-      object-fit: contain;
-      border-radius: 17px;
-    }
-
-    .work-art {
-      min-height: 165px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 17px;
-      border: 1px solid rgba(125,190,255,.18);
-      border-radius: 17px;
-      background:
-        radial-gradient(circle at 50% 30%,rgba(0,170
+</body>
+</html>
