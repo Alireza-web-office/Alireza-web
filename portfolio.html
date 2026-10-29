@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -6,7 +7,6 @@
 <meta name="theme-color" content="#080d19">
 <meta name="description" content="نمونه‌کارهای ALIREZA WEB در هویت بصری، طراحی وب، گرافیک، فناوری و PS4.">
 <title>نمونه‌کارها | ALIREZA WEB</title>
-
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -299,27 +299,42 @@ h1 span {
         transition: none;
     }
 }
+
+/* اصلاح منوی موبایل: پس‌زمینه مشکی و کاملاً مات */
+@media (max-width: 768px) {
+    .header .nav,
+    .header .nav.active,
+    .header .nav.open,
+    .header .nav.show,
+    .header .nav.opened {
+        background: #080d19 !important;
+        background-color: #080d19 !important;
+        background-image: none !important;
+        opacity: 1 !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+        isolation: isolate;
+        z-index: 9999 !important;
+    }
+
+    .header .nav a {
+        background-color: #080d19 !important;
+        opacity: 1 !important;
+    }
+}
 </style>
 </head>
 
 <body>
-
 <header class="header" id="header">
-
     <a class="brand" href="index.html">
         <span>AW</span>
         <b>ALIREZA WEB</b>
     </a>
 
-    <button
-        class="icon-btn menu-btn"
-        id="menuBtn"
-        type="button"
-        aria-label="باز کردن منو"
-        aria-controls="nav"
-        aria-expanded="false">
-        ☰
-    </button>
+    <button class="icon-btn menu-btn" id="menuBtn"
+        type="button" aria-label="باز کردن منو"
+        aria-controls="nav" aria-expanded="false">☰</button>
 
     <nav class="nav" id="nav">
         <a href="index.html">خانه</a>
@@ -329,562 +344,312 @@ h1 span {
         <a href="contact.html">تماس</a>
     </nav>
 
-    <button
-        class="icon-btn theme-btn"
-        id="themeBtn"
-        type="button"
-        aria-label="تغییر حالت">
-        ☾
-    </button>
-
+    <button class="icon-btn theme-btn" id="themeBtn"
+        type="button" aria-label="تغییر حالت">☾</button>
 </header>
 
 <main class="portfolio-page">
-
-    <!-- صفحه اصلی دسته‌بندی‌ها -->
-
     <section class="hero glass" id="homeHero">
-
         <span class="eyebrow">✦ ALIREZA WEB / PORTFOLIO</span>
-
-        <h1>
-            نمونه‌کارهای
-            <span>ALIREZA WEB</span>
-        </h1>
-
+        <h1>نمونه‌کارهای <span>ALIREZA WEB</span></h1>
         <p>
             نمونه‌کارهای من را در دسته‌بندی‌های مختلف ببین.
             هر بخش مجموعه اختصاصی خودش را دارد.
         </p>
-
         <div class="tags">
             <span>NEON BLUE</span>
             <span>GLASS DESIGN</span>
             <span>WEB & DIGITAL</span>
         </div>
-
     </section>
 
     <section id="categoryHome">
-
         <div class="heading">
             <h2>دسته‌بندی نمونه‌کارها</h2>
             <p>یک دسته را انتخاب کن تا نمونه‌کارهای آن را ببینی.</p>
         </div>
 
         <div class="categories">
-
-            <!-- هویت بصری -->
-
-            <a class="category glass"
-               href="portfolio.html?category=identity">
-
+            <a class="category glass" href="portfolio.html?category=identity">
                 <div class="art">
                     <strong>AW IDENTITY</strong>
                     <span>LOGO · BRAND · MOTION</span>
                 </div>
-
                 <h3>هویت بصری</h3>
-
-                <p>
-                    لوگو، هویت برند، طراحی‌های تصویری و لوگوموشن.
-                </p>
-
+                <p>لوگو، هویت برند، طراحی‌های تصویری و لوگوموشن.</p>
                 <span class="open">مشاهده نمونه‌کارها ←</span>
-
             </a>
 
-            <!-- طراحی وب -->
-
-            <a class="category glass"
-               href="portfolio.html?category=web">
-
+            <a class="category glass" href="portfolio.html?category=web">
                 <div class="art">
                     <strong>WEB DESIGN</strong>
                     <span>WEBSITES · UI</span>
                 </div>
-
                 <h3>طراحی وب</h3>
-
-                <p>
-                    وب‌سایت‌ها و پروژه‌های طراحی صفحات اینترنتی.
-                </p>
-
+                <p>وب‌سایت‌ها و پروژه‌های طراحی صفحات اینترنتی.</p>
                 <span class="open">مشاهده نمونه‌کارها ←</span>
-
             </a>
 
-            <!-- طراحی گرافیک -->
-
-            <a class="category glass"
-               href="portfolio.html?category=graphic">
-
+            <a class="category glass" href="portfolio.html?category=graphic">
                 <div class="art">
                     <strong>GRAPHIC LAB</strong>
                     <span>POSTER · BANNER</span>
                 </div>
-
                 <h3>طراحی گرافیک</h3>
-
-                <p>
-                    طراحی پوستر، بنر و محتوای تصویری دیجیتال.
-                </p>
-
+                <p>طراحی پوستر، بنر و محتوای تصویری دیجیتال.</p>
                 <span class="open">مشاهده نمونه‌کارها ←</span>
-
             </a>
 
-            <!-- خدمات و فناوری -->
-
-            <a class="category glass"
-               href="portfolio.html?category=tech">
-
+            <a class="category glass" href="portfolio.html?category=tech">
                 <div class="art">
                     <strong>TECH SUPPORT</strong>
                     <span>COMPUTER · SOFTWARE</span>
                 </div>
-
                 <h3>خدمات و فناوری</h3>
-
-                <p>
-                    خدمات کامپیوتری، نرم‌افزار و پشتیبانی فنی.
-                </p>
-
+                <p>خدمات کامپیوتری، نرم‌افزار و پشتیبانی فنی.</p>
                 <span class="open">مشاهده نمونه‌کارها ←</span>
-
             </a>
 
-            <!-- پلی استیشن -->
-
-            <a class="category glass"
-               href="portfolio.html?category=ps4">
-
+            <a class="category glass" href="portfolio.html?category=ps4">
                 <div class="art">
                     <strong>PS4 GAMING</strong>
                     <span>GAMES · SERVICES</span>
                 </div>
-
                 <h3>PS4</h3>
-
-                <p>
-                    فعالیت‌ها و خدمات مرتبط با پلی‌استیشن ۴.
-                </p>
-
+                <p>فعالیت‌ها و خدمات مرتبط با پلی‌استیشن ۴.</p>
                 <span class="open">مشاهده نمونه‌کارها ←</span>
-
             </a>
-
         </div>
-
     </section>
 
-    <!-- صفحه اختصاصی هر دسته -->
-
     <section id="categoryDetail" hidden>
-
         <div class="detail-top">
-
             <div class="heading" style="margin:0">
                 <h2 id="detailTitle">نمونه‌کارها</h2>
                 <p id="detailDescription"></p>
             </div>
-
-            <a class="back" href="portfolio.html">
-                ← بازگشت به همه دسته‌ها
-            </a>
-
+            <a class="back" href="portfolio.html">← بازگشت به همه دسته‌ها</a>
         </div>
-
         <div class="works" id="detailGrid"></div>
-
     </section>
 
-    <!-- ارتباط با من -->
-
     <section class="cta glass">
-
         <h2>پروژه‌ای در ذهن داری؟</h2>
-
         <p>
             برای آشنایی با خدمات و مطرح‌کردن درخواستت،
             از صفحه تماس استفاده کن.
         </p>
-
         <a href="contact.html">ارتباط با من ←</a>
-
     </section>
-
 </main>
 
 <footer class="footer">
-
     <p>© 2026 ALIREZA WEB — تمام حقوق محفوظ است.</p>
-
     <a href="contact.html">ارتباط با من</a>
-
 </footer>
 
-<button
-    id="topBtn"
-    class="top-btn"
-    type="button"
-    aria-label="بازگشت به بالای صفحه">
-    ↑
-</button>
+<button id="topBtn" class="top-btn" type="button"
+    aria-label="بازگشت به بالای صفحه">↑</button>
 
 <script src="script.js"></script>
 
 <script>
 (() => {
-
 "use strict";
 
-/* اطلاعات نمونه‌کارها */
-
 const data = {
-
-    /* هویت بصری */
-
     identity: {
         title: "هویت بصری",
-
         desc: "نمونه‌کارهای تصویری و ویدیویی هویت بصری ALIREZA WEB.",
-
         items: [
-
             {
                 title: "نمونه‌کار تصویری",
-
                 tag: "هویت بصری",
-
                 image: "file_00000000b4708246b1103e74c6e236e7.png",
-
                 desc: "نمونه‌کار تصویری ALIREZA WEB.",
-
                 detail: "نمونه‌کار تصویری در مجموعه هویت بصری."
             },
-
             {
                 title: "لوگوموشن ALIREZA WEB",
-
                 tag: "لوگوموشن",
-
                 video: "logo-motion.mp4",
-
                 desc: "نمایش متحرک لوگوی ALIREZA WEB.",
-
                 detail: "ویدیوی لوگوموشن برند ALIREZA WEB."
             }
-
         ]
     },
-
-    /* طراحی وب */
 
     web: {
         title: "طراحی وب",
-
         desc: "پروژه‌های وب و طراحی صفحات دیجیتال.",
-
         items: [
-
             {
                 title: "وب‌سایت ALIREZA WEB",
-
                 tag: "طراحی وب",
-
                 art: "ALIREZA WEB",
-
                 sub: "WEB DESIGN · DIGITAL",
-
                 desc: "وب‌سایت معرفی خدمات دیجیتال با طراحی تیره و جزئیات نئونی آبی.",
-
                 detail: "شامل صفحه خانه، خدمات، درباره من، تماس و نمونه‌کارها.",
-
                 link: "index.html"
             }
-
         ]
     },
-
-    /* طراحی گرافیک */
 
     graphic: {
         title: "طراحی گرافیک",
-
         desc: "مجموعه طراحی‌های گرافیکی و محتوای دیجیتال.",
-
         items: [
-
             {
                 title: "طراحی پوستر",
-
                 tag: "پوستر",
-
                 art: "POSTER DESIGN",
-
                 sub: "CREATIVE · DIGITAL",
-
                 desc: "بخش اختصاصی نمایش نمونه‌کارهای پوستر.",
-
                 detail: "با آماده‌شدن نمونه‌های واقعی، تصاویر این بخش اضافه می‌شوند."
             },
-
             {
                 title: "طراحی بنر تبلیغاتی",
-
                 tag: "بنر",
-
                 art: "BANNER DESIGN",
-
                 sub: "PROMO · SOCIAL",
-
                 desc: "طرح‌های تبلیغاتی و محتوای تصویری شبکه‌های اجتماعی.",
-
                 detail: "این قسمت برای نمایش طرح‌های نهایی آماده است."
             }
-
         ]
     },
-
-    /* خدمات و فناوری */
 
     tech: {
         title: "خدمات و فناوری",
-
         desc: "فعالیت‌های فنی، کامپیوتری و نرم‌افزاری.",
-
         items: [
-
             {
                 title: "خدمات کامپیوتری و نرم‌افزاری",
-
                 tag: "فناوری",
-
                 art: "TECH SUPPORT",
-
                 sub: "COMPUTER · SOFTWARE",
-
                 desc: "معرفی خدمات نصب نرم‌افزار و پشتیبانی فنی.",
-
                 detail: "نمونه‌های تصویری این بخش در آینده قابل اضافه‌شدن هستند."
             }
-
         ]
     },
 
-    /* پلی استیشن ۴ */
-
     ps4: {
         title: "PS4",
-
         desc: "مجموعه فعالیت‌ها و خدمات مرتبط با پلی‌استیشن ۴.",
-
         items: [
-
             {
                 title: "خدمات و فعالیت‌های PS4",
-
                 tag: "PS4 Gaming",
-
                 art: "PS4",
-
                 sub: "GAMING SERVICES",
-
                 desc: "بخش اختصاصی خدمات و محتوای مرتبط با PS4.",
-
                 detail: "تصاویر و توضیحات نمونه‌کارهای PS4 را می‌توان به این قسمت اضافه کرد."
             }
-
         ]
     }
-
 };
 
-/* تشخیص دسته انتخاب‌شده */
-
 const params = new URLSearchParams(window.location.search);
-
 const key = params.get("category");
-
 const item = data[key];
-
-/* اگر دسته‌ای انتخاب نشده، صفحه اصلی نمایش داده شود */
 
 if (!item) {
     return;
 }
 
-/* نمایش صفحه دسته‌بندی */
-
 document.getElementById("homeHero").hidden = true;
-
 document.getElementById("categoryHome").hidden = true;
-
 document.getElementById("categoryDetail").hidden = false;
-
 document.title = item.title + " | نمونه‌کارها | ALIREZA WEB";
-
 document.getElementById("detailTitle").textContent = item.title;
-
 document.getElementById("detailDescription").textContent = item.desc;
 
 const grid = document.getElementById("detailGrid");
 
-/* ساخت کارت‌های نمونه‌کار */
-
 item.items.forEach((x) => {
-
     const card = document.createElement("article");
-
     card.className = "work glass";
-
-    let visual = "";
-
-    /* اگر نمونه‌کار ویدیویی است */
+    let visual;
 
     if (x.video) {
-
         const video = document.createElement("video");
-
         video.className = "video";
-
         video.controls = true;
-
         video.autoplay = true;
-
         video.muted = true;
-
         video.loop = true;
-
         video.playsInline = true;
-
         video.preload = "metadata";
-
         video.setAttribute("aria-label", x.title);
 
         const source = document.createElement("source");
-
         source.src = x.video;
-
         source.type = "video/mp4";
-
         video.appendChild(source);
-
         visual = video;
 
-    }
-
-    /* اگر نمونه‌کار تصویری است */
-
-    else if (x.image) {
-
+    } else if (x.image) {
         const image = document.createElement("img");
-
         image.className = "portfolio-image";
-
         image.src = x.image;
-
         image.alt = x.title;
-
         image.loading = "lazy";
-
         visual = image;
 
-    }
-
-    /* کارت گرافیکی نمایشی برای بخش‌های دیگر */
-
-    else {
-
+    } else {
         const art = document.createElement("div");
-
         art.className = "art";
 
         const strong = document.createElement("strong");
-
         strong.textContent = x.art || "";
 
         const span = document.createElement("span");
-
         span.textContent = x.sub || "";
 
         art.appendChild(strong);
-
         art.appendChild(span);
-
         visual = art;
-
     }
 
-    /* محتوای کارت */
-
     const pill = document.createElement("span");
-
     pill.className = "pill";
-
     pill.textContent = x.tag;
 
     const title = document.createElement("h3");
-
     title.textContent = x.title;
 
     const description = document.createElement("p");
-
     description.textContent = x.desc;
 
     card.appendChild(visual);
-
     card.appendChild(pill);
-
     card.appendChild(title);
-
     card.appendChild(description);
 
-    /* جزئیات بیشتر */
-
     if (x.detail) {
-
         const details = document.createElement("details");
-
         const summary = document.createElement("summary");
-
         summary.textContent = "جزئیات";
 
         const detailText = document.createElement("p");
-
         detailText.textContent = x.detail;
 
         details.appendChild(summary);
-
         details.appendChild(detailText);
-
         card.appendChild(details);
-
     }
 
-    /* لینک وب‌سایت */
-
     if (x.link) {
-
         const link = document.createElement("a");
-
         link.className = "open";
-
         link.href = x.link;
-
         link.textContent = "مشاهده وب‌سایت ←";
-
         card.appendChild(link);
-
     }
 
     grid.appendChild(card);
-
 });
-
 })();
 </script>
-
 </body>
 </html>
