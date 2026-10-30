@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#070b13">
-<meta name="description" content="آرشیو بازی‌های PS4 در ALIREZA WEB؛ مشاهده، جست‌وجو و دسته‌بندی بازی‌های ثبت‌شده.">
-<title>آرشیو بازی‌های PS4 | ALIREZA WEB</title>
+<meta name="description" content="آرشیو بازی‌های ALIREZA WEB؛ جست‌وجو و مشاهده بازی‌ها.">
+<title>آرشیو بازی‌ها | ALIREZA WEB</title>
 <style>
 :root{
   --bg:#070b13;--panel:#0e1725;--panel2:#101e30;--blue:#00b7ff;
@@ -73,12 +73,12 @@ footer strong{color:var(--blue);letter-spacing:1px}
 </header>
 
 <section class="hero">
-  <span class="eyebrow">PLAYSTATION 4 · GAME ARCHIVE</span>
-  <h1>آرشیو بازی‌های <span>PS4</span></h1>
+  <span class="eyebrow">PLAYSTATION · GAME ARCHIVE</span>
+  <h1>آرشیو بازی‌های <span>AW</span></h1>
   <p>فهرست بازی‌های ثبت‌شده در آرشیو علیرضا وب؛ نام بازی رو جست‌وجو کن یا با دسته‌بندی‌ها سریع‌تر پیداش کن.</p>
   <div class="stats">
-    <div class="stat"><strong id="totalCount">۱۲</strong><small>بازی ثبت‌شده</small></div>
-    <div class="stat"><strong>PS4</strong><small>پلتفرم آرشیو</small></div>
+    <div class="stat"><strong id="totalCount">۱۳</strong><small>بازی ثبت‌شده</small></div>
+    <div class="stat"><strong>AW</strong><small>آرشیو بازی‌ها</small></div>
     <div class="stat"><strong>AW</strong><small>ALIREZA WEB</small></div>
   </div>
 </section>
@@ -98,13 +98,13 @@ footer strong{color:var(--blue);letter-spacing:1px}
     </div>
   </section>
 
-  <div class="result-line"><strong>فهرست بازی‌ها</strong><span id="resultCount">۱۲ بازی</span></div>
+  <div class="result-line"><strong>فهرست بازی‌ها</strong><span id="resultCount">۱۳ بازی</span></div>
   <section class="grid" id="gameGrid" aria-live="polite"></section>
   <div class="empty" id="noResults">بازی‌ای با این نام یا دسته‌بندی پیدا نشد.</div>
-  <div class="notice"><strong>توجه:</strong> پوسترها در صورت وجود از تصویر بندانگشتی مقاله‌های ویکی‌پدیا بارگذاری می‌شن؛ اگه تصویری برای یک بازی پیدا نشه، کارت گرافیکی اختصاصی همون بازی نمایش داده می‌شه. برای بارگذاری پوسترهای آنلاین، اتصال اینترنت لازمه.</div>
+  <div class="notice"><strong>توجه:</strong> پوسترها در صورت وجود از منابع آنلاین بارگذاری می‌شن. برای نمایش کاورها اتصال اینترنت لازمه؛ اگه تصویری در دسترس نباشه، کارت گرافیکی اختصاصی بازی نمایش داده می‌شه.</div>
 </main>
 
-<footer><strong>ALIREZA WEB</strong><br>آرشیو بازی‌های پلی‌استیشن ۴<br>© 2026 ALIREZA WEB</footer>
+<footer><strong>ALIREZA WEB</strong><br>آرشیو بازی‌ها<br>© 2026 ALIREZA WEB</footer>
 
 <script>
 const games = [
@@ -119,7 +119,16 @@ const games = [
   {name:"Nickelodeon All-Star Brawl",wiki:"Nickelodeon All-Star Brawl",category:"مبارزه‌ای",icon:"💥",description:"نبرد شخصیت‌های محبوب انیمیشنی."},
   {name:"Nidhogg 2",wiki:"Nidhogg 2",category:"مبارزه‌ای",icon:"⚔️",description:"دوئل سریع و رقابتی با شمشیر."},
   {name:"Limbo",wiki:"Limbo (video game)",category:"معمایی",icon:"🌑",description:"پلتفرمر معمایی با فضایی تاریک و خاص."},
-  {name:"Downwell",wiki:"Downwell",category:"آرکید",icon:"⬇️",description:"اکشن آرکیدی سریع در مسیر سقوط به چاه."}
+  {name:"Downwell",wiki:"Downwell",category:"آرکید",icon:"⬇️",description:"اکشن آرکیدی سریع در مسیر سقوط به چاه."},
+  {
+    name:"Winning Eleven 3",
+    shortName:"Winning Eleven 3",
+    category:"ورزشی",
+    icon:"⚽",
+    platform:"PS1",
+    image:"https://psxdatacenter.com/images/covers/J/W/SLPM-86086/SLPM-86086-F-ALL.jpg",
+    description:"فوتبال کلاسیک و نوستالژیک؛ نسخه World Cup France ’98 برای پلی‌استیشن ۱."
+  }
 ];
 
 const grid=document.getElementById("gameGrid");
@@ -134,43 +143,55 @@ function makeCard(game,index){
   article.className="game-card";
   article.dataset.name=game.name.toLowerCase();
   article.dataset.category=game.category;
+
   article.innerHTML=`
     <div class="poster">
       <div class="poster-fallback">
         <span class="big-icon">${game.icon}</span>
         <span class="fallback-title"></span>
-        <small>ALIREZA WEB · PS4</small>
+        <small>ALIREZA WEB · GAME</small>
       </div>
-      <span class="poster-label">PS4 ARCHIVE</span>
+      <span class="poster-label"></span>
     </div>
     <div class="card-content">
       <h2></h2>
       <span class="category"></span>
       <p></p>
     </div>`;
+
   article.querySelector(".fallback-title").textContent=game.shortName||game.name;
   article.querySelector("h2").textContent=game.name;
   article.querySelector(".category").textContent=game.category;
   article.querySelector(".card-content p").textContent=game.description;
+  article.querySelector(".poster-label").textContent=game.platform||"GAME ARCHIVE";
+
   const poster=article.querySelector(".poster");
   const fallback=article.querySelector(".poster-fallback");
 
-  // Load an available thumbnail from Wikipedia; keep the designed fallback if unavailable.
-  const endpoint="https://en.wikipedia.org/api/rest_v1/page/summary/"+encodeURIComponent(game.wiki.replace(/ /g,"_"));
-  fetch(endpoint,{headers:{"Accept":"application/json"}})
-    .then(response=>{if(!response.ok) throw new Error("No thumbnail");return response.json();})
-    .then(data=>{
-      const source=data.thumbnail&&data.thumbnail.source;
-      if(!source) throw new Error("No thumbnail");
-      const img=document.createElement("img");
-      img.src=source;
-      img.alt="تصویر "+game.name;
-      img.loading=index<4?"eager":"lazy";
-      img.referrerPolicy="no-referrer";
-      img.onload=()=>{fallback.style.display="none";};
-      img.onerror=()=>{img.remove();};
-      poster.insertBefore(img,poster.firstChild);
-    }).catch(()=>{});
+  function loadPoster(source){
+    const img=document.createElement("img");
+    img.src=source;
+    img.alt="کاور "+game.name;
+    img.loading=index<4?"eager":"lazy";
+    img.referrerPolicy="no-referrer";
+    img.onload=()=>{fallback.style.display="none";};
+    img.onerror=()=>{img.remove();};
+    poster.insertBefore(img,poster.firstChild);
+  }
+
+  if(game.image){
+    loadPoster(game.image);
+  }else if(game.wiki){
+    const endpoint="https://en.wikipedia.org/api/rest_v1/page/summary/"+encodeURIComponent(game.wiki.replace(/ /g,"_"));
+    fetch(endpoint,{headers:{"Accept":"application/json"}})
+      .then(response=>{if(!response.ok)throw new Error("No thumbnail");return response.json();})
+      .then(data=>{
+        const source=data.thumbnail&&data.thumbnail.source;
+        if(source)loadPoster(source);
+      })
+      .catch(()=>{});
+  }
+
   return article;
 }
 
@@ -180,19 +201,22 @@ document.getElementById("totalCount").textContent=new Intl.NumberFormat("fa-IR")
 function applyFilters(){
   const query=search.value.trim().toLocaleLowerCase();
   let visible=0;
+
   [...grid.children].forEach(card=>{
     const game=games.find(item=>item.name.toLowerCase()===card.dataset.name);
-    const searchText=(game.name+" "+(game.shortName||"")+" "+game.category).toLocaleLowerCase();
+    const searchText=(game.name+" "+(game.shortName||"")+" "+game.category+" "+(game.platform||"")).toLocaleLowerCase();
     const matchesSearch=searchText.includes(query);
     const matchesCategory=selectedCategory==="همه"||game.category===selectedCategory;
     const show=matchesSearch&&matchesCategory;
     card.style.display=show?"":"none";
     if(show)visible++;
   });
+
   resultCount.textContent=new Intl.NumberFormat("fa-IR").format(visible)+" بازی";
   noResults.style.display=visible?"none":"block";
   grid.style.display=visible?"grid":"none";
 }
+
 search.addEventListener("input",applyFilters);
 filters.addEventListener("click",event=>{
   const button=event.target.closest("button[data-category]");
