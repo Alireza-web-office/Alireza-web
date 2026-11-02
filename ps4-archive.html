@@ -28,6 +28,7 @@ body{
   line-height:1.8
 }
 a{color:inherit;text-decoration:none}
+
 header{
   position:sticky;
   top:0;
@@ -72,6 +73,7 @@ header{
   background:var(--blue);
   color:#00111b
 }
+
 .hero{
   text-align:center;
   padding:58px 18px 35px
@@ -127,6 +129,7 @@ header{
   color:var(--muted);
   font-size:11px
 }
+
 main{
   width:min(1240px,100%);
   padding:15px 20px 55px;
@@ -238,7 +241,9 @@ main{
   display:block;
   transition:transform .35s
 }
-.game-card:hover .poster img{transform:scale(1.035)}
+.game-card:hover .poster img{
+  transform:scale(1.035)
+}
 .poster-fallback{
   position:absolute;
   inset:0;
@@ -331,6 +336,7 @@ footer strong{
   color:var(--blue);
   letter-spacing:1px
 }
+
 @media(max-width:950px){
   .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
@@ -338,16 +344,10 @@ footer strong{
   header{padding:12px 15px}
   .brand{font-size:16px}
   .hero{padding-top:42px}
-  .grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:11px
-  }
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
   main{padding:10px 12px 40px}
   .card-content{padding:10px}
-  .card-content h2{
-    font-size:12px;
-    min-height:45px
-  }
+  .card-content h2{font-size:12px;min-height:45px}
   .poster-fallback .big-icon{font-size:42px}
   .poster-fallback .fallback-title{font-size:12px}
   .toolbar{padding:12px}
@@ -371,10 +371,7 @@ footer strong{
 <section class="hero">
   <span class="eyebrow">PLAYSTATION · GAME ARCHIVE</span>
   <h1>آرشیو بازی‌های <span>AW</span></h1>
-  <p>
-    فهرست بازی‌های ثبت‌شده در آرشیو علیرضا وب؛
-    نام بازی رو جست‌وجو کن یا با دسته‌بندی‌ها سریع‌تر پیداش کن.
-  </p>
+  <p>فهرست بازی‌های ثبت‌شده در آرشیو علیرضا وب؛ نام بازی رو جست‌وجو کن یا با دسته‌بندی‌ها سریع‌تر پیداش کن.</p>
 
   <div class="stats">
     <div class="stat">
@@ -432,10 +429,8 @@ footer strong{
 
   <div class="notice">
     <strong>توجه:</strong>
-    تصاویر بازی‌ها از منابع آنلاین دریافت می‌شن.
-    برای بارگذاری تصاویر اتصال اینترنت لازمه.
-    اگر تصویری در منابع موجود نباشه یا در دسترس قرار نگیره،
-    کارت گرافیکی اختصاصی بازی نمایش داده می‌شه.
+    پوسترها از منابع آنلاین بارگذاری می‌شن. برای نمایش تصاویر اتصال اینترنت لازمه؛
+    اگه تصویری در دسترس نباشه، کارت گرافیکی اختصاصی بازی نمایش داده می‌شه.
   </div>
 
 </main>
@@ -455,121 +450,97 @@ const games = [
   {
     name:"Cars 3: Driven to Win",
     shortName:"Cars 3",
-    wiki:"Cars 3: Driven to Win",
-    imageQuery:"Cars 3 Driven to Win video game cover",
     category:"مسابقه‌ای",
     icon:"🚗",
-    platform:"PS4",
+    image:"https://images.launchbox-app.com/6153a8e7-a70c-43bf-8dc7-032cbfe1dfd2.jpg",
     description:"مسابقه و رانندگی در دنیای ماشین‌ها."
   },
 
   {
     name:"Rocket League",
-    wiki:"Rocket League",
-    imageQuery:"Rocket League video game cover",
     category:"ورزشی",
     icon:"⚽",
-    platform:"PS4",
+    image:"https://upload.wikimedia.org/wikipedia/commons/e/e0/Rocket_League_coverart.jpg",
     description:"ترکیب فوتبال و ماشین‌های مسابقه‌ای."
   },
 
   {
     name:"Human: Fall Flat",
-    wiki:"Human: Fall Flat",
-    imageQuery:"Human Fall Flat game cover",
     category:"معمایی",
     icon:"🧍",
-    platform:"PS4",
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/477160/header.jpg",
     description:"حل معما و عبور از مراحل با فیزیک بامزه."
   },
 
   {
     name:"Truck Driver",
-    wiki:"Truck Driver (video game)",
-    imageQuery:"Truck Driver video game cover",
     category:"شبیه‌ساز",
     icon:"🚚",
-    platform:"PS4",
+    image:"https://vgdl.ir/wp-content/uploads/2021/06/Truck-Driver.jpg",
     description:"تجربه رانندگی و جابه‌جایی بار با کامیون."
   },
 
   {
     name:"Attack on Titan",
-    wiki:"Attack on Titan (video game)",
-    imageQuery:"Attack on Titan video game cover",
     category:"اکشن",
     icon:"⚔️",
-    platform:"PS4",
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/449800/header.jpg",
     description:"نبردهای اکشن در دنیای Attack on Titan."
   },
 
   {
     name:"Absolute Drift",
-    wiki:"Absolute Drift",
-    imageQuery:"Absolute Drift video game cover",
     category:"مسابقه‌ای",
     icon:"🏎️",
-    platform:"PS4",
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/320140/header.jpg",
     description:"تمرین مهارت رانندگی و دریفت."
   },
 
   {
     name:"Brawlhalla",
-    wiki:"Brawlhalla",
-    imageQuery:"Brawlhalla game cover",
     category:"مبارزه‌ای",
     icon:"🥊",
-    platform:"PS4",
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/291550/header.jpg",
     description:"نبردهای سریع در سبک مبارزه‌ای."
   },
 
   {
     name:"DYSMANTLE",
-    wiki:"Dysmantle",
-    imageQuery:"DYSMANTLE video game cover",
     category:"اکشن",
     icon:"🧭",
-    platform:"PS4",
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/846770/header.jpg",
     description:"اکتشاف، ساخت‌وساز و بقا در دنیایی پساآخرالزمانی."
   },
 
   {
     name:"Nickelodeon All-Star Brawl",
-    wiki:"Nickelodeon All-Star Brawl",
-    imageQuery:"Nickelodeon All Star Brawl game cover",
     category:"مبارزه‌ای",
     icon:"💥",
-    platform:"PS4",
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1414850/header.jpg",
     description:"نبرد شخصیت‌های محبوب انیمیشنی."
   },
 
   {
     name:"Nidhogg 2",
-    wiki:"Nidhogg 2",
-    imageQuery:"Nidhogg 2 video game cover",
     category:"مبارزه‌ای",
     icon:"⚔️",
-    platform:"PS4",
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/535520/header.jpg",
     description:"دوئل سریع و رقابتی با شمشیر."
   },
 
   {
     name:"Limbo",
-    wiki:"Limbo (video game)",
-    imageQuery:"Limbo video game cover",
     category:"معمایی",
     icon:"🌑",
-    platform:"PS4",
+    image:"https://cdn.akamai.steamstatic.com/steam/apps/48000/header.jpg",
     description:"پلتفرمر معمایی با فضایی تاریک و خاص."
   },
 
   {
     name:"Downwell",
-    wiki:"Downwell",
-    imageQuery:"Downwell video game cover",
     category:"آرکید",
     icon:"⬇️",
-    platform:"GAME",
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/360740/header.jpg",
     description:"اکشن آرکیدی سریع در مسیر سقوط به چاه."
   },
 
@@ -586,43 +557,39 @@ const games = [
   {
     name:"مجموعه بازی‌های نوستالژی Java",
     shortName:"Java Games",
-    wiki:"Java Platform, Micro Edition",
-    imageQuery:"Java ME mobile phone games Nokia retro",
     category:"آرکید",
     icon:"📱",
     platform:"JAVA",
+    image:"https://articles-img.sftcdn.net/t_article_cover_xl/auto-mapping-folder/sites/2/2010/08/javagames.jpg",
     description:"مجموعه‌ای از بازی‌های قدیمی موبایل‌های جاوا؛ خاطره‌انگیز و نوستالژیک."
   },
 
   {
     name:"Pro Evolution Soccer 2013",
     shortName:"PES 2013",
-    wiki:"Pro Evolution Soccer 2013",
-    imageQuery:"Pro Evolution Soccer 2013 game cover",
     category:"ورزشی",
     icon:"⚽",
     platform:"PS2",
+    image:"https://psxdatacenter.com/psx2/images2/covers/SLES-55666/SLES-55666-F-ALL.jpg",
     description:"نسخه محبوب PES 2013 با گزارش فارسی عادل فردوسی‌پور."
   },
 
   {
     name:"Shrek SuperSlam",
-    wiki:"Shrek SuperSlam",
-    imageQuery:"Shrek SuperSlam video game cover",
     category:"مبارزه‌ای",
     icon:"🟢",
     platform:"PS2",
+    image:"https://images.launchbox-app.com/f892c0c7-82e6-4a1e-a409-38b50401e6e5.jpg",
     description:"نبرد شخصیت‌های دنیای شرک در یک بازی مبارزه‌ای سرگرم‌کننده."
   },
 
   {
     name:"RoboCop Versus The Terminator",
     shortName:"RoboCop vs Terminator",
-    wiki:"RoboCop Versus The Terminator",
-    imageQuery:"RoboCop Versus The Terminator video game cover",
     category:"اکشن",
     icon:"🤖",
     platform:"RETRO",
+    image:"https://images.launchbox-app.com/d599eb5e-cbde-402d-bcca-bf5032542db4.jpg",
     description:"یک بازی اکشن کلاسیک با حضور دو شخصیت علمی‌تخیلی معروف."
   }
 
@@ -636,114 +603,6 @@ const filters=document.getElementById("filters");
 
 let selectedCategory="همه";
 
-function loadImage(article,source){
-
-  return new Promise(resolve=>{
-
-    const poster=article.querySelector(".poster");
-    const fallback=article.querySelector(".poster-fallback");
-
-    const img=document.createElement("img");
-
-    img.alt="کاور "+article.dataset.name;
-    img.loading="lazy";
-    img.referrerPolicy="no-referrer";
-
-    img.onload=()=>{
-      fallback.style.display="none";
-      resolve(true);
-    };
-
-    img.onerror=()=>{
-      img.remove();
-      resolve(false);
-    };
-
-    img.src=source;
-
-  });
-
-}
-
-async function getWikipediaImage(game){
-
-  if(!game.wiki)return null;
-
-  try{
-
-    const endpoint=
-      "https://en.wikipedia.org/api/rest_v1/page/summary/"+
-      encodeURIComponent(game.wiki.replace(/ /g,"_"));
-
-    const response=await fetch(endpoint);
-
-    if(!response.ok)return null;
-
-    const data=await response.json();
-
-    return data.thumbnail?.source || null;
-
-  }catch(error){
-
-    return null;
-
-  }
-
-}
-
-async function getCommonsImage(game){
-
-  if(!game.imageQuery)return null;
-
-  try{
-
-    const endpoint=
-      "https://commons.wikimedia.org/w/api.php?"+
-      new URLSearchParams({
-        action:"query",
-        generator:"search",
-        gsrsearch:"filetype:bitmap "+game.imageQuery,
-        gsrnamespace:"6",
-        gsrlimit:"5",
-        prop:"imageinfo",
-        iiprop:"url",
-        iiurlwidth:"600",
-        format:"json",
-        origin:"*"
-      });
-
-    const response=await fetch(endpoint);
-
-    if(!response.ok)return null;
-
-    const data=await response.json();
-
-    const pages=data.query?.pages;
-
-    if(!pages)return null;
-
-    const files=Object.values(pages);
-
-    for(const file of files){
-
-      const image=
-        file.imageinfo?.[0]?.thumburl ||
-        file.imageinfo?.[0]?.url;
-
-      if(image)return image;
-
-    }
-
-    return null;
-
-  }catch(error){
-
-    return null;
-
-  }
-
-}
-
 function makeCard(game,index){
 
   const article=document.createElement("article");
@@ -756,7 +615,7 @@ function makeCard(game,index){
     <div class="poster">
 
       <div class="poster-fallback">
-        <span class="big-icon"></span>
+        <span class="big-icon">${game.icon}</span>
         <span class="fallback-title"></span>
         <small>ALIREZA WEB · GAME</small>
       </div>
@@ -766,24 +625,19 @@ function makeCard(game,index){
     </div>
 
     <div class="card-content">
-
       <h2></h2>
-
       <span class="category"></span>
-
       <p></p>
-
     </div>
   `;
-
-  article.querySelector(".big-icon").textContent=game.icon;
 
   article.querySelector(".fallback-title").textContent=
     game.shortName||game.name;
 
   article.querySelector("h2").textContent=game.name;
 
-  article.querySelector(".category").textContent=game.category;
+  article.querySelector(".category").textContent=
+    game.category;
 
   article.querySelector(".card-content p").textContent=
     game.description;
@@ -791,50 +645,35 @@ function makeCard(game,index){
   article.querySelector(".poster-label").textContent=
     game.platform||"GAME ARCHIVE";
 
+  const poster=article.querySelector(".poster");
+  const fallback=article.querySelector(".poster-fallback");
+
   if(game.image){
 
-    loadImage(article,game.image);
+    const img=document.createElement("img");
 
-  }else{
+    img.src=game.image;
+    img.alt="کاور "+game.name;
+    img.loading=index<4?"eager":"lazy";
+    img.referrerPolicy="no-referrer";
 
-    loadGameImage(article,game);
+    img.onload=()=>{
+      fallback.style.display="none";
+    };
 
+    img.onerror=()=>{
+      img.remove();
+      fallback.style.display="flex";
+    };
+
+    poster.insertBefore(img,poster.firstChild);
   }
 
   return article;
-
-}
-
-async function loadGameImage(article,game){
-
-  // مرحله اول: تصویر اختصاصی ویکی‌پدیا
-
-  const wikiImage=await getWikipediaImage(game);
-
-  if(wikiImage){
-
-    const loaded=await loadImage(article,wikiImage);
-
-    if(loaded)return;
-
-  }
-
-  // مرحله دوم: جست‌وجوی تصویر در Wikimedia Commons
-
-  const commonsImage=await getCommonsImage(game);
-
-  if(commonsImage){
-
-    await loadImage(article,commonsImage);
-
-  }
-
 }
 
 games.forEach((game,index)=>{
-
   grid.appendChild(makeCard(game,index));
-
 });
 
 document.getElementById("totalCount").textContent=
@@ -848,8 +687,8 @@ function applyFilters(){
 
   [...grid.children].forEach(card=>{
 
-    const game=games.find(item=>
-      item.name.toLowerCase()===card.dataset.name
+    const game=games.find(
+      item=>item.name.toLowerCase()===card.dataset.name
     );
 
     const searchText=(
@@ -870,7 +709,6 @@ function applyFilters(){
     card.style.display=show?"":"none";
 
     if(show)visible++;
-
   });
 
   resultCount.textContent=
@@ -879,7 +717,6 @@ function applyFilters(){
   noResults.style.display=visible?"none":"block";
 
   grid.style.display=visible?"grid":"none";
-
 }
 
 search.addEventListener("input",applyFilters);
@@ -893,9 +730,7 @@ filters.addEventListener("click",event=>{
   selectedCategory=button.dataset.category;
 
   filters.querySelectorAll(".filter").forEach(item=>{
-
     item.classList.toggle("active",item===button);
-
   });
 
   applyFilters();
