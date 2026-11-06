@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -29,6 +28,85 @@
       padding: 28px 20px;
     }
 
+    /* قاب RGB عکس */
+    .profile-frame {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      flex: 0 0 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      isolation: isolate;
+    }
+
+    .profile-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      padding: 3px;
+
+      background: linear-gradient(
+        120deg,
+        #00d9ff,
+        #7b2cff,
+        #ff00b7,
+        #ff3030,
+        #00ff99,
+        #00d9ff
+      );
+
+      background-size: 300% 300%;
+      animation: rgb-border 7s linear infinite;
+
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+
+      z-index: 2;
+    }
+
+    .profile-frame::after {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+
+      background: conic-gradient(
+        #00d9ff,
+        #7b2cff,
+        #ff00b7,
+        #ff3030,
+        #00ff99,
+        #00d9ff
+      );
+
+      filter: blur(13px);
+      opacity: 0.45;
+      animation: rgb-border 7s linear infinite;
+
+      z-index: -1;
+    }
+
+    @keyframes rgb-border {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
     .profile-photo {
       display: block !important;
       width: 160px !important;
@@ -37,21 +115,18 @@
       min-height: 0 !important;
       max-width: 160px !important;
       max-height: 160px !important;
-      aspect-ratio: 1 / 1;
-      box-sizing: border-box !important;
       flex: 0 0 160px !important;
+
       border-radius: 50% !important;
       object-fit: contain !important;
       object-position: center !important;
-      border: 3px solid #35baff !important;
-      outline: 2px solid #168bff66;
-      outline-offset: 4px;
-      box-shadow:
-        0 0 10px #35baffaa,
-        0 0 24px #168bff88,
-        0 0 40px #168bff44;
+
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+
       position: relative;
-      z-index: 2;
+      z-index: 1;
       background: #080d18;
     }
 
@@ -69,7 +144,7 @@
       pointer-events: none;
     }
 
-    /* بخش بازی‌ها */
+    /* بازی‌ها */
     .games-section .game-card {
       position: relative;
       overflow: hidden;
@@ -126,6 +201,12 @@
         padding: 24px 16px;
       }
 
+      .profile-frame {
+        width: 145px;
+        height: 145px;
+        flex-basis: 145px;
+      }
+
       .profile-photo {
         width: 135px !important;
         height: 135px !important;
@@ -136,10 +217,14 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      .profile-frame::before,
+      .profile-frame::after {
+        animation: none !important;
+      }
+
       .hero-card *,
       .hero-text *,
       .games-section * {
-        animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
       }
     }
@@ -205,13 +290,15 @@
 
       <div class="hero-card">
 
-        <img
-          class="profile-photo"
-          src="file_000000008a58820abf6e43d9c5e68d1e.png"
-          alt="عکس علیرضا مزارعی"
-          loading="eager"
-          decoding="async"
-        >
+        <div class="profile-frame">
+          <img
+            class="profile-photo"
+            src="alirezapic.png"
+            alt="عکس علیرضا مزارعی"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
 
         <div class="aw">AW</div>
         <div class="scan"></div>
@@ -269,7 +356,6 @@
 
       <div class="cards">
 
-        <!-- NEON CITY -->
         <article class="card game-card">
 
           <span class="game-label">🎮 بازی تحت وب</span>
@@ -294,7 +380,6 @@
 
         </article>
 
-        <!-- NEON WORLD -->
         <article class="card game-card">
 
           <span class="game-label">🌍 بازی تحت وب</span>
