@@ -2,360 +2,271 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#070b13">
-<meta name="description" content="آرشیو بازی‌های ALIREZA WEB؛ جست‌وجو و مشاهده بازی‌ها.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b18">
 <title>آرشیو بازی‌ها | ALIREZA WEB</title>
 
 <style>
-:root{
-  --bg:#070b13;
-  --panel:#0e1725;
-  --panel2:#101e30;
-  --blue:#00b7ff;
-  --blue2:#5bd4ff;
-  --text:#f2f7ff;
-  --muted:#9aabc0;
-  --line:rgba(0,183,255,.23);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
 body{
-  margin:0;
-  background:radial-gradient(ellipse at 50% -15%,#123456 0,transparent 47%),var(--bg);
-  color:var(--text);
-  font-family:Tahoma,Arial,sans-serif;
-  line-height:1.8
+    font-family:Tahoma,Arial,sans-serif;
+    background:#070b18;
+    color:#fff;
+    min-height:100vh;
 }
-a{color:inherit;text-decoration:none}
 
 header{
-  position:sticky;
-  top:0;
-  z-index:10;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-  padding:15px clamp(16px,5vw,70px);
-  background:rgba(7,11,19,.88);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line)
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(5,10,25,.92);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(0,195,255,.25);
+    padding:18px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
 }
-.brand{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  font-weight:900;
-  letter-spacing:.6px;
-  color:var(--blue);
-  font-size:19px
+
+.logo{
+    color:#00c8ff;
+    font-size:21px;
+    font-weight:bold;
+    letter-spacing:1px;
+    text-shadow:0 0 15px #008cff;
 }
-.brand-mark{
-  display:grid;
-  place-items:center;
-  width:37px;
-  height:37px;
-  border:1px solid var(--blue);
-  border-radius:11px;
-  box-shadow:0 0 18px #00b7ff22;
-  font-size:13px
+
+.logo span{
+    color:white;
 }
+
 .header-link{
-  border:1px solid var(--line);
-  padding:7px 13px;
-  border-radius:10px;
-  font-size:12px;
-  transition:.2s
+    color:#00c8ff;
+    text-decoration:none;
+    font-size:13px;
 }
-.header-link:hover{
-  background:var(--blue);
-  color:#00111b
+
+.container{
+    width:90%;
+    max-width:1250px;
+    margin:35px auto;
 }
 
 .hero{
-  text-align:center;
-  padding:58px 18px 35px
+    text-align:center;
+    padding:35px 15px;
+    margin-bottom:25px;
+    border:1px solid rgba(0,195,255,.2);
+    border-radius:20px;
+    background:linear-gradient(135deg,#101b35,#080d1c);
+    box-shadow:0 0 30px rgba(0,150,255,.08);
 }
-.eyebrow{
-  display:inline-flex;
-  gap:8px;
-  align-items:center;
-  border:1px solid var(--line);
-  background:#071624;
-  border-radius:99px;
-  padding:5px 13px;
-  color:var(--blue2);
-  font-size:11px;
-  letter-spacing:1.4px
-}
+
 .hero h1{
-  font-size:clamp(29px,5vw,49px);
-  line-height:1.4;
-  margin:18px 0 8px;
-  font-weight:900
+    font-size:30px;
+    color:#00c8ff;
+    text-shadow:0 0 18px rgba(0,195,255,.5);
+    margin-bottom:12px;
 }
-.hero h1 span{
-  color:var(--blue);
-  text-shadow:0 0 24px #00b7ff40
-}
+
 .hero p{
-  color:var(--muted);
-  max-width:640px;
-  margin:0 auto;
-  font-size:14px
-}
-.stats{
-  display:flex;
-  justify-content:center;
-  gap:11px;
-  flex-wrap:wrap;
-  margin-top:25px
-}
-.stat{
-  min-width:116px;
-  padding:10px 18px;
-  background:linear-gradient(145deg,#111f31,#0b1320);
-  border:1px solid var(--line);
-  border-radius:13px
-}
-.stat strong{
-  display:block;
-  color:var(--blue);
-  font-size:21px
-}
-.stat small{
-  color:var(--muted);
-  font-size:11px
+    color:#b8c5d9;
+    font-size:14px;
+    line-height:2;
 }
 
-main{
-  width:min(1240px,100%);
-  padding:15px 20px 55px;
-  margin:auto
+.counter{
+    margin-top:18px;
+    color:#00d9ff;
+    font-size:14px;
 }
-.toolbar{
-  padding:16px;
-  background:#0b1421d9;
-  border:1px solid var(--line);
-  border-radius:17px;
-  margin-bottom:25px
+
+.search-box{
+    margin:25px auto;
+    max-width:600px;
 }
-.search-wrap{position:relative}
-.search-icon{
-  position:absolute;
-  right:15px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:17px;
-  color:var(--blue)
+
+.search-box input{
+    width:100%;
+    padding:15px 18px;
+    border-radius:12px;
+    border:1px solid #174b70;
+    outline:none;
+    background:#0c1528;
+    color:white;
+    font-family:Tahoma;
+    font-size:14px;
+    transition:.3s;
 }
-#search{
-  width:100%;
-  background:#070d17;
-  border:1px solid #24374c;
-  color:var(--text);
-  border-radius:11px;
-  padding:14px 45px 14px 14px;
-  outline:none;
-  font:14px Tahoma,Arial,sans-serif
+
+.search-box input:focus{
+    border-color:#00c8ff;
+    box-shadow:0 0 15px rgba(0,195,255,.2);
 }
-#search:focus{
-  border-color:var(--blue);
-  box-shadow:0 0 0 3px #00b7ff14
-}
+
 .filters{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-top:13px
-}
-.filter{
-  cursor:pointer;
-  border:1px solid #26384d;
-  border-radius:9px;
-  background:#0a1220;
-  color:#b9c7d8;
-  padding:7px 12px;
-  font:12px Tahoma,Arial,sans-serif;
-  transition:.2s
-}
-.filter:hover,.filter.active{
-  background:var(--blue);
-  color:#00101a;
-  border-color:var(--blue)
-}
-.result-line{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin:0 2px 15px;
-  color:var(--muted);
-  font-size:12px
-}
-.result-line strong{
-  color:var(--text);
-  font-size:15px
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:17px
-}
-.game-card{
-  min-width:0;
-  overflow:hidden;
-  background:linear-gradient(145deg,#111d2d,#0b111b);
-  border:1px solid var(--line);
-  border-radius:15px;
-  transition:transform .22s,border-color .22s,box-shadow .22s
-}
-.game-card:hover{
-  transform:translateY(-5px);
-  border-color:#00b7ff9c;
-  box-shadow:0 12px 30px #0006,0 0 18px #00b7ff0c
-}
-.poster{
-  position:relative;
-  aspect-ratio:4/5;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:radial-gradient(ellipse at 50% 35%,#17456b,#0b1422 66%);
-  border-bottom:1px solid var(--line)
-}
-.poster::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,transparent 55%,#07101ce8 100%);
-  pointer-events:none
-}
-.poster img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  display:block;
-  transition:transform .35s;
-  position:relative;
-  z-index:1
-}
-.game-card:hover .poster img{
-  transform:scale(1.035)
-}
-.poster-fallback{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-  background:radial-gradient(ellipse at 50% 30%,#17456b,#0b1422 70%)
-}
-.poster-fallback .big-icon{
-  font-size:52px;
-  filter:drop-shadow(0 0 14px #00b7ff42)
-}
-.poster-fallback .fallback-title{
-  font-size:15px;
-  font-weight:900;
-  line-height:1.5;
-  margin-top:12px
-}
-.poster-fallback small{
-  font-size:9px;
-  letter-spacing:2px;
-  color:#8cb9d5;
-  margin-top:8px
-}
-.poster-label{
-  position:absolute;
-  z-index:2;
-  top:11px;
-  right:11px;
-  background:#07101dcc;
-  border:1px solid #00b7ff65;
-  color:#dff7ff;
-  border-radius:7px;
-  padding:3px 8px;
-  font-size:9px;
-  letter-spacing:1px
-}
-.card-content{padding:13px}
-.card-content h2{
-  font-size:14px;
-  line-height:1.8;
-  margin:0 0 7px;
-  min-height:50px
-}
-.category{
-  display:inline-block;
-  border:1px solid var(--line);
-  background:#00b7ff0c;
-  color:var(--blue2);
-  border-radius:30px;
-  padding:2px 9px;
-  font-size:10px;
-  margin-bottom:9px
-}
-.card-content p{
-  font-size:11px;
-  color:var(--muted);
-  line-height:1.9;
-  margin:0
-}
-.empty{
-  display:none;
-  text-align:center;
-  color:var(--muted);
-  padding:55px 10px;
-  border:1px dashed var(--line);
-  border-radius:14px
-}
-.notice{
-  margin-top:24px;
-  padding:13px 15px;
-  border:1px solid #24374c;
-  background:#0a1220;
-  border-radius:12px;
-  color:var(--muted);
-  font-size:11px
-}
-.notice strong{color:var(--blue2)}
-footer{
-  border-top:1px solid var(--line);
-  text-align:center;
-  padding:25px 15px 30px;
-  color:var(--muted);
-  font-size:11px
-}
-footer strong{
-  color:var(--blue);
-  letter-spacing:1px
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:30px;
 }
 
-@media(max-width:950px){
-  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.filter-btn{
+    padding:10px 17px;
+    border-radius:30px;
+    border:1px solid #164c70;
+    background:#0c1528;
+    color:#c8d8eb;
+    cursor:pointer;
+    font-family:Tahoma;
+    font-size:12px;
+    transition:.3s;
 }
-@media(max-width:650px){
-  header{padding:12px 15px}
-  .brand{font-size:16px}
-  .hero{padding-top:42px}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-  main{padding:10px 12px 40px}
-  .card-content{padding:10px}
-  .card-content h2{font-size:12px;min-height:45px}
-  .poster-fallback .big-icon{font-size:42px}
-  .poster-fallback .fallback-title{font-size:12px}
-  .toolbar{padding:12px}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:#007eae;
+    color:white;
+    border-color:#00c8ff;
+    box-shadow:0 0 15px rgba(0,195,255,.25);
 }
-@media(max-width:350px){
-  .grid{grid-template-columns:1fr}
+
+.games-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+    gap:22px;
+}
+
+.game-card{
+    background:linear-gradient(145deg,#111d34,#0a1020);
+    border:1px solid rgba(0,195,255,.18);
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+    min-width:0;
+}
+
+.game-card:hover{
+    transform:translateY(-6px);
+    border-color:#00c8ff;
+    box-shadow:0 8px 25px rgba(0,150,255,.15);
+}
+
+.poster{
+    width:100%;
+    aspect-ratio:4/5;
+    background:#080d19;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px;
+    overflow:hidden;
+}
+
+.poster img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.no-image{
+    color:#526780;
+    font-size:13px;
+    text-align:center;
+    line-height:2;
+}
+
+.game-info{
+    padding:14px;
+}
+
+.game-info h3{
+    font-size:14px;
+    line-height:1.8;
+    min-height:48px;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.tags{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:7px;
+}
+
+.tag{
+    font-size:10px;
+    padding:6px 9px;
+    border-radius:20px;
+    background:rgba(0,195,255,.1);
+    color:#00c8ff;
+    border:1px solid rgba(0,195,255,.2);
+}
+
+.platform{
+    color:#aab8cc;
+    font-size:10px;
+}
+
+.empty{
+    display:none;
+    text-align:center;
+    padding:45px 10px;
+    color:#aab8cc;
+}
+
+footer{
+    margin-top:60px;
+    padding:25px 15px;
+    text-align:center;
+    background:#050914;
+    border-top:1px solid rgba(0,195,255,.2);
+    color:#8292a9;
+    font-size:12px;
+    line-height:2.2;
+}
+
+footer strong{
+    color:#00c8ff;
+}
+
+@media(max-width:600px){
+    header{
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .container{
+        width:92%;
+    }
+
+    .hero h1{
+        font-size:23px;
+    }
+
+    .games-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:13px;
+    }
+
+    .game-info{
+        padding:10px;
+    }
+
+    .game-info h3{
+        font-size:12px;
+    }
 }
 </style>
 </head>
@@ -363,410 +274,371 @@ footer strong{
 <body>
 
 <header>
-  <a class="brand" href="index.html" aria-label="صفحه اصلی علیرضا وب">
-    <span class="brand-mark">AW</span>
-    <span>ALIREZA WEB</span>
-  </a>
-  <a class="header-link" href="index.html">← بازگشت به سایت</a>
+    <div class="logo">ALIREZA <span>WEB</span></div>
+    <a class="header-link" href="index.html">صفحه اصلی ←</a>
 </header>
 
-<section class="hero">
-  <span class="eyebrow">PLAYSTATION · GAME ARCHIVE</span>
-  <h1>آرشیو بازی‌های <span>AW</span></h1>
-  <p>فهرست بازی‌های ثبت‌شده در آرشیو علیرضا وب؛ نام بازی رو جست‌وجو کن یا با دسته‌بندی‌ها سریع‌تر پیداش کن.</p>
+<main class="container">
 
-  <div class="stats">
-    <div class="stat">
-      <strong id="totalCount">۲۰</strong>
-      <small>بازی ثبت‌شده</small>
-    </div>
-    <div class="stat">
-      <strong>AW</strong>
-      <small>آرشیو بازی‌ها</small>
-    </div>
-    <div class="stat">
-      <strong>AW</strong>
-      <small>ALIREZA WEB</small>
-    </div>
-  </div>
-</section>
+    <section class="hero">
+        <h1>آرشیو بازی‌ها</h1>
+        <p>
+            مجموعه‌ای از بازی‌های خاطره‌انگیز و محبوب
+            برای کنسول‌ها و پلتفرم‌های مختلف
+        </p>
+        <div class="counter">
+            تعداد بازی‌ها: <span id="gameCount">28</span>
+        </div>
+    </section>
 
-<main>
-
-  <section class="toolbar" aria-label="جست‌وجو و فیلتر بازی‌ها">
-
-    <div class="search-wrap">
-      <span class="search-icon">⌕</span>
-      <input
-        id="search"
-        type="search"
-        placeholder="نام بازی رو جست‌وجو کن..."
-        aria-label="جست‌وجوی بازی"
-      >
+    <div class="search-box">
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="نام بازی مورد نظر را جست‌وجو کنید..."
+        >
     </div>
 
-    <div class="filters" id="filters">
-      <button class="filter active" data-category="همه">همه بازی‌ها</button>
-      <button class="filter" data-category="مسابقه‌ای">مسابقه‌ای</button>
-      <button class="filter" data-category="ورزشی">ورزشی</button>
-      <button class="filter" data-category="اکشن">اکشن</button>
-      <button class="filter" data-category="مبارزه‌ای">مبارزه‌ای</button>
-      <button class="filter" data-category="معمایی">معمایی</button>
-      <button class="filter" data-category="شبیه‌ساز">شبیه‌ساز</button>
-      <button class="filter" data-category="آرکید">آرکید</button>
+    <div class="filters">
+        <button class="filter-btn active" data-category="all">همه بازی‌ها</button>
+        <button class="filter-btn" data-category="اکشن">اکشن</button>
+        <button class="filter-btn" data-category="ورزشی">ورزشی</button>
+        <button class="filter-btn" data-category="مسابقه‌ای">مسابقه‌ای</button>
+        <button class="filter-btn" data-category="مبارزه‌ای">مبارزه‌ای</button>
+        <button class="filter-btn" data-category="معمایی">معمایی</button>
+        <button class="filter-btn" data-category="آرکید">آرکید</button>
+        <button class="filter-btn" data-category="شبیه‌ساز">شبیه‌ساز</button>
     </div>
 
-  </section>
+    <section class="games-grid" id="gamesGrid"></section>
 
-  <div class="result-line">
-    <strong>فهرست بازی‌ها</strong>
-    <span id="resultCount">۲۰ بازی</span>
-  </div>
-
-  <section class="grid" id="gameGrid" aria-live="polite"></section>
-
-  <div class="empty" id="noResults">
-    بازی‌ای با این نام یا دسته‌بندی پیدا نشد.
-  </div>
-
-  <div class="notice">
-    <strong>توجه:</strong>
-    پوسترها از منابع آنلاین بارگذاری می‌شن. برای نمایش تصاویر اتصال اینترنت لازمه؛
-    اگه تصویری در دسترس نباشه، کارت گرافیکی اختصاصی بازی نمایش داده می‌شه.
-  </div>
+    <div class="empty" id="emptyMessage">
+        بازی مورد نظر پیدا نشد!
+    </div>
 
 </main>
 
 <footer>
-  <strong>ALIREZA WEB</strong>
-  <br>
-  آرشیو بازی‌ها
-  <br>
-  © 2026 ALIREZA WEB
+    <strong>ALIREZA WEB</strong><br>
+    خدمات وب و فناوری<br>
+    © تمامی حقوق محفوظ است.
 </footer>
 
 <script>
 
 const games = [
 
-  {
-    name:"Cars 3: Driven to Win",
-    shortName:"Cars 3",
-    category:"مسابقه‌ای",
-    icon:"🚗",
-    image:"https://images.launchbox-app.com/56a319cf-8307-47ad-87e6-ed0155d1fbf1.png",
-    description:"مسابقه و رانندگی در دنیای ماشین‌ها."
-  },
+{
+name:"Cars 3: Driven to Win",
+category:"مسابقه‌ای",
+platform:"PS4",
+image:"https://images.launchbox-app.com/56a319cf-8307-47ad-87e6-ed0155d1fbf1.png"
+},
 
-  {
-    name:"Rocket League",
-    category:"ورزشی",
-    icon:"⚽",
-    image:"https://upload.wikimedia.org/wikipedia/commons/e/e0/Rocket_League_coverart.jpg",
-    description:"ترکیب فوتبال و ماشین‌های مسابقه‌ای."
-  },
+{
+name:"Rocket League",
+category:"ورزشی",
+platform:"PS4",
+image:"https://upload.wikimedia.org/wikipedia/commons/e/e0/Rocket_League_coverart.jpg"
+},
 
-  {
-    name:"Human: Fall Flat",
-    category:"معمایی",
-    icon:"🧍",
-    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/477160/header.jpg",
-    description:"حل معما و عبور از مراحل با فیزیک بامزه."
-  },
+{
+name:"Human: Fall Flat",
+category:"معمایی",
+platform:"PS4",
+image:"https://cdn.cloudflare.steamstatic.com/steam/apps/477160/header.jpg"
+},
 
-  {
-    name:"Truck Driver",
-    category:"شبیه‌ساز",
-    icon:"🚚",
-    image:"https://vgdl.ir/wp-content/uploads/2021/06/Truck-Driver.jpg",
-    description:"تجربه رانندگی و جابه‌جایی بار با کامیون."
-  },
+{
+name:"Truck Driver",
+category:"شبیه‌ساز",
+platform:"PS4",
+image:"https://vgdl.ir/wp-content/uploads/2021/06/Truck-Driver.jpg"
+},
 
-  {
-    name:"Attack on Titan",
-    category:"اکشن",
-    icon:"⚔️",
-    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/449800/header.jpg",
-    description:"نبردهای اکشن در دنیای Attack on Titan."
-  },
+{
+name:"Attack on Titan",
+category:"اکشن",
+platform:"PS4",
+image:"https://cdn.cloudflare.steamstatic.com/steam/apps/449800/header.jpg"
+},
 
-  {
-    name:"Absolute Drift",
-    category:"مسابقه‌ای",
-    icon:"🏎️",
-    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/320140/header.jpg",
-    description:"تمرین مهارت رانندگی و دریفت."
-  },
+{
+name:"Absolute Drift",
+category:"مسابقه‌ای",
+platform:"PS4",
+image:"https://cdn.cloudflare.steamstatic.com/steam/apps/320140/header.jpg"
+},
 
-  {
-    name:"Brawlhalla",
-    category:"مبارزه‌ای",
-    icon:"🥊",
-    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/291550/header.jpg",
-    description:"نبردهای سریع در سبک مبارزه‌ای."
-  },
+{
+name:"Brawlhalla",
+category:"مبارزه‌ای",
+platform:"PS4",
+image:"https://cdn.cloudflare.steamstatic.com/steam/apps/291550/header.jpg"
+},
 
-  {
-    name:"DYSMANTLE",
-    category:"اکشن",
-    icon:"🧭",
-    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/846770/header.jpg",
-    description:"اکتشاف، ساخت‌وساز و بقا در دنیایی پساآخرالزمانی."
-  },
+{
+name:"DYSMANTLE",
+category:"اکشن",
+platform:"PS4",
+image:"https://cdn.cloudflare.steamstatic.com/steam/apps/846770/header.jpg"
+},
 
-  {
-    name:"Nickelodeon All-Star Brawl",
-    category:"مبارزه‌ای",
-    icon:"💥",
-    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1414850/header.jpg",
-    description:"نبرد شخصیت‌های محبوب انیمیشنی."
-  },
+{
+name:"Nickelodeon All-Star Brawl",
+category:"مبارزه‌ای",
+platform:"PS4",
+image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1414850/header.jpg"
+},
 
-  {
-    name:"Nidhogg 2",
-    category:"مبارزه‌ای",
-    icon:"⚔️",
-    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/535520/header.jpg",
-    description:"دوئل سریع و رقابتی با شمشیر."
-  },
+{
+name:"Nidhogg 2",
+category:"مبارزه‌ای",
+platform:"PS4",
+image:"https://cdn.cloudflare.steamstatic.com/steam/apps/535520/header.jpg"
+},
 
-  {
-    name:"Limbo",
-    category:"معمایی",
-    icon:"🌑",
-    image:"https://cdn.akamai.steamstatic.com/steam/apps/48000/header.jpg",
-    description:"پلتفرمر معمایی با فضایی تاریک و خاص."
-  },
+{
+name:"Limbo",
+category:"معمایی",
+platform:"PS4",
+image:"https://cdn.akamai.steamstatic.com/steam/apps/48000/header.jpg"
+},
 
-  {
-    name:"Downwell",
-    category:"آرکید",
-    icon:"⬇️",
-    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/360740/header.jpg",
-    description:"اکشن آرکیدی سریع در مسیر سقوط به چاه."
-  },
+{
+name:"Downwell",
+category:"آرکید",
+platform:"PS4",
+image:"https://cdn.cloudflare.steamstatic.com/steam/apps/360740/header.jpg"
+},
 
-  {
-    name:"Winning Eleven 3",
-    shortName:"Winning Eleven 3",
-    category:"ورزشی",
-    icon:"⚽",
-    platform:"PS1",
-    image:"https://psxdatacenter.com/images/covers/J/W/SLPM-86086/SLPM-86086-F-ALL.jpg",
-    description:"فوتبال کلاسیک و نوستالژیک؛ نسخه World Cup France 98 برای پلی‌استیشن ۱."
-  },
+{
+name:"Winning Eleven 3",
+category:"ورزشی",
+platform:"PS1",
+image:"https://psxdatacenter.com/images/covers/J/W/SLPM-86086/SLPM-86086-F-ALL.jpg"
+},
 
-  {
-    name:"مجموعه بازی‌های نوستالژی Java",
-    shortName:"Java Games",
-    category:"آرکید",
-    icon:"📱",
-    platform:"JAVA",
-    image:"https://articles-img.sftcdn.net/t_article_cover_xl/auto-mapping-folder/sites/2/2010/08/javagames.jpg",
-    description:"مجموعه‌ای از بازی‌های قدیمی موبایل‌های جاوا؛ خاطره‌انگیز و نوستالژیک."
-  },
+{
+name:"مجموعه بازی‌های نوستالژی Java",
+category:"آرکید",
+platform:"JAVA",
+image:"https://articles-img.sftcdn.net/t_article_cover_xl/auto-mapping-folder/sites/2/2010/08/javagames.jpg"
+},
 
-  {
-    name:"Pro Evolution Soccer 2013",
-    shortName:"PES 2013",
-    category:"ورزشی",
-    icon:"⚽",
-    platform:"PS2",
-    image:"https://psxdatacenter.com/psx2/images2/covers/SLES-55666/SLES-55666-F-ALL.jpg",
-    description:"نسخه محبوب PES 2013 با گزارش فارسی عادل فردوسی‌پور."
-  },
+{
+name:"Pro Evolution Soccer 2013",
+category:"ورزشی",
+platform:"PS2",
+image:"https://psxdatacenter.com/psx2/images2/covers/SLES-55666/SLES-55666-F-ALL.jpg"
+},
 
-  {
-    name:"Shrek SuperSlam",
-    category:"مبارزه‌ای",
-    icon:"🟢",
-    platform:"PS2",
-    image:"https://images.launchbox-app.com/f892c0c7-82e6-4a1e-a409-38b50401e6e5.jpg",
-    description:"نبرد شخصیت‌های دنیای شرک در یک بازی مبارزه‌ای سرگرم‌کننده."
-  },
+{
+name:"Shrek SuperSlam",
+category:"مبارزه‌ای",
+platform:"PS2",
+image:"https://images.launchbox-app.com/f892c0c7-82e6-4a1e-a409-38b50401e6e5.jpg"
+},
 
-  {
-    name:"RoboCop (2003)",
-    shortName:"RoboCop PS2",
-    category:"اکشن",
-    icon:"🤖",
-    platform:"PS2",
-    image:"https://images.launchbox-app.com/24103e3c-1801-45de-a1fe-3fe43bda44ff.png",
-    description:"نسخه سال ۲۰۰۳ روبوکاپ برای پلی‌استیشن ۲."
-  },
+{
+name:"RoboCop (2003)",
+category:"اکشن",
+platform:"PS2",
+image:"https://images.launchbox-app.com/24103e3c-1801-45de-a1fe-3fe43bda44ff.png"
+},
 
-  {
-    name:"FIFA Street",
-    category:"ورزشی",
-    icon:"⚽",
-    platform:"PS2",
-    image:"https://images.launchbox-app.com/0dca269c-bf8d-4345-b489-f0c1b1444dca.jpg",
-    description:"فوتبال خیابانی با حرکات نمایشی و رقابت‌های جذاب."
-  },
+{
+name:"FIFA Street",
+category:"ورزشی",
+platform:"PS2",
+image:"https://images.launchbox-app.com/0dca269c-bf8d-4345-b489-f0c1b1444dca.jpg"
+},
 
-  {
-    name:"Sega Mega Drive / Genesis +700 Games",
-    shortName:"SEGA +700 Games",
-    category:"آرکید",
-    icon:"🎮",
-    platform:"SEGA",
-    image:"https://images.launchbox-app.com/47f0457b-20d2-4c91-b8a1-af849d9879e1.png",
-    description:"مجموعه‌ای از صدها بازی کلاسیک و نوستالژیک سگا."
-  },
+{
+name:"Sega Mega Drive / Genesis +700 Games",
+category:"آرکید",
+platform:"SEGA",
+image:"https://images.launchbox-app.com/47f0457b-20d2-4c91-b8a1-af849d9879e1.png"
+},
 
-  {
-    name:"GTA: Chinatown Wars",
-    shortName:"GTA Chinatown Wars",
-    category:"اکشن",
-    icon:"🚕",
-    platform:"PSP",
-    image:"https://images.launchbox-app.com/ee437ed9-6036-495a-9d92-c4fbad01e609.jpg",
-    description:"ماجراجویی در شهر و داستان هیجان‌انگیز Chinatown Wars."
-  }
+{
+name:"GTA: Chinatown Wars",
+category:"اکشن",
+platform:"PSP",
+image:"https://images.launchbox-app.com/ee437ed9-6036-495a-9d92-c4fbad01e609.jpg"
+},
+
+{
+name:"WWE SmackDown vs. Raw 2011",
+category:"ورزشی",
+platform:"PS2",
+image:"https://images.launchbox-app.com/ba322471-1e23-47e2-afad-699e9482aacf.jpg"
+},
+
+{
+name:"Nintendo Legends Collection (4 in 1)",
+category:"آرکید",
+platform:"COLLECTION",
+image:"https://upload.wikimedia.org/wikipedia/commons/7/7a/Nintendo_Entertainment_System.jpg"
+},
+
+{
+name:"Mr. Bean",
+category:"معمایی",
+platform:"PS2",
+image:"https://images.launchbox-app.com/e5738011-5672-4e81-bed1-fbe4abb125b2.jpg"
+},
+
+{
+name:"Pepsiman",
+category:"آرکید",
+platform:"PS1",
+image:"https://images.launchbox-app.com/e4700663-0973-4520-add2-b1baedba4f41.jpg"
+},
+
+{
+name:"Grand Theft Auto: San Andreas",
+category:"اکشن",
+platform:"PS2",
+image:"https://images.launchbox-app.com/56b5479a-bba5-43d6-b458-0fcd00bf10ba.png"
+},
+
+{
+name:"GTA: Liberty City Stories",
+category:"اکشن",
+platform:"PSP",
+image:"https://images.launchbox-app.com/6828c5ad-5cb0-4b1c-b899-620e51268427.jpg"
+},
+
+{
+name:"Tekken 3",
+category:"مبارزه‌ای",
+platform:"PS1",
+image:"https://images.launchbox-app.com/6044b892-aa53-4f9b-bdc1-f90268c02321.jpg"
+},
+
+{
+name:"Mortal Kombat Trilogy",
+category:"مبارزه‌ای",
+platform:"PS1",
+image:"https://images.launchbox-app.com/d2cc3568-2c0e-4ffb-b3d1-fbcf7e6e4806.jpg"
+}
 
 ];
 
-const grid=document.getElementById("gameGrid");
-const search=document.getElementById("search");
-const resultCount=document.getElementById("resultCount");
-const noResults=document.getElementById("noResults");
-const filters=document.getElementById("filters");
+const grid = document.getElementById("gamesGrid");
+const searchInput = document.getElementById("searchInput");
+const count = document.getElementById("gameCount");
+const emptyMessage = document.getElementById("emptyMessage");
 
-let selectedCategory="همه";
+let selectedCategory = "all";
 
-function makeCard(game,index){
+function renderGames(){
 
-  const article=document.createElement("article");
+    const searchText = searchInput.value.trim().toLowerCase();
 
-  article.className="game-card";
-  article.dataset.name=game.name.toLowerCase();
-  article.dataset.category=game.category;
+    const filteredGames = games.filter(game => {
 
-  article.innerHTML=`
-    <div class="poster">
+        const matchesSearch =
+            game.name.toLowerCase().includes(searchText) ||
+            game.category.toLowerCase().includes(searchText) ||
+            game.platform.toLowerCase().includes(searchText);
 
-      <div class="poster-fallback">
-        <span class="big-icon">${game.icon}</span>
-        <span class="fallback-title"></span>
-        <small>ALIREZA WEB · GAME</small>
-      </div>
+        const matchesCategory =
+            selectedCategory === "all" ||
+            game.category === selectedCategory;
 
-      <span class="poster-label"></span>
+        return matchesSearch && matchesCategory;
 
-    </div>
+    });
 
-    <div class="card-content">
-      <h2></h2>
-      <span class="category"></span>
-      <p></p>
-    </div>
-  `;
+    grid.innerHTML = "";
 
-  article.querySelector(".fallback-title").textContent=
-    game.shortName||game.name;
+    filteredGames.forEach(game => {
 
-  article.querySelector("h2").textContent=game.name;
+        const card = document.createElement("article");
+        card.className = "game-card";
 
-  article.querySelector(".category").textContent=
-    game.category;
+        const poster = document.createElement("div");
+        poster.className = "poster";
 
-  article.querySelector(".card-content p").textContent=
-    game.description;
+        if(game.image){
 
-  article.querySelector(".poster-label").textContent=
-    game.platform||"GAME ARCHIVE";
+            const img = document.createElement("img");
+            img.src = game.image;
+            img.alt = game.name;
+            img.loading = "lazy";
 
-  const poster=article.querySelector(".poster");
-  const fallback=article.querySelector(".poster-fallback");
+            img.onerror = function(){
+                poster.innerHTML = '<div class="no-image">تصویر بازی در دسترس نیست</div>';
+            };
 
-  if(game.image){
+            poster.appendChild(img);
 
-    const img=document.createElement("img");
+        }else{
 
-    img.src=game.image;
-    img.alt="تصویر "+game.name;
-    img.loading=index<4?"eager":"lazy";
-    img.referrerPolicy="no-referrer";
+            poster.innerHTML = '<div class="no-image">تصویر موجود نیست</div>';
 
-    img.onload=()=>{
-      fallback.style.display="none";
-    };
+        }
 
-    img.onerror=()=>{
-      img.remove();
-      fallback.style.display="flex";
-    };
+        const info = document.createElement("div");
+        info.className = "game-info";
 
-    poster.insertBefore(img,poster.firstChild);
-  }
+        const title = document.createElement("h3");
+        title.textContent = game.name;
 
-  return article;
+        const tags = document.createElement("div");
+        tags.className = "tags";
+
+        const category = document.createElement("span");
+        category.className = "tag";
+        category.textContent = game.category;
+
+        const platform = document.createElement("span");
+        platform.className = "platform";
+        platform.textContent = game.platform;
+
+        tags.appendChild(category);
+        tags.appendChild(platform);
+
+        info.appendChild(title);
+        info.appendChild(tags);
+
+        card.appendChild(poster);
+        card.appendChild(info);
+
+        grid.appendChild(card);
+
+    });
+
+    count.textContent = filteredGames.length;
+
+    emptyMessage.style.display =
+        filteredGames.length === 0 ? "block" : "none";
+
 }
 
-games.forEach((game,index)=>{
-  grid.appendChild(makeCard(game,index));
-});
+document.querySelectorAll(".filter-btn").forEach(button => {
 
-document.getElementById("totalCount").textContent=
-  new Intl.NumberFormat("fa-IR").format(games.length);
+    button.addEventListener("click", function(){
 
-function applyFilters(){
+        document.querySelectorAll(".filter-btn").forEach(btn => {
+            btn.classList.remove("active");
+        });
 
-  const query=search.value.trim().toLocaleLowerCase();
+        this.classList.add("active");
 
-  let visible=0;
+        selectedCategory = this.dataset.category;
 
-  [...grid.children].forEach(card=>{
+        renderGames();
 
-    const game=games.find(
-      item=>item.name.toLowerCase()===card.dataset.name
-    );
-
-    const searchText=(
-      game.name+" "+
-      (game.shortName||"")+" "+
-      game.category+" "+
-      (game.platform||"")
-    ).toLocaleLowerCase();
-
-    const matchesSearch=searchText.includes(query);
-
-    const matchesCategory=
-      selectedCategory==="همه"||
-      game.category===selectedCategory;
-
-    const show=matchesSearch&&matchesCategory;
-
-    card.style.display=show?"":"none";
-
-    if(show)visible++;
-  });
-
-  resultCount.textContent=
-    new Intl.NumberFormat("fa-IR").format(visible)+" بازی";
-
-  noResults.style.display=visible?"none":"block";
-
-  grid.style.display=visible?"grid":"none";
-}
-
-search.addEventListener("input",applyFilters);
-
-filters.addEventListener("click",event=>{
-
-  const button=event.target.closest("button[data-category]");
-
-  if(!button)return;
-
-  selectedCategory=button.dataset.category;
-
-  filters.querySelectorAll(".filter").forEach(item=>{
-    item.classList.toggle("active",item===button);
-  });
-
-  applyFilters();
+    });
 
 });
+
+searchInput.addEventListener("input", renderGames);
+
+renderGames();
 
 </script>
 
