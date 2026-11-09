@@ -4,14 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#070b18">
+<meta name="description" content="آرشیو بازی‌های ALIREZA WEB">
 <title>آرشیو بازی‌ها | ALIREZA WEB</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
     font-family:Tahoma,Arial,sans-serif;
@@ -42,9 +39,7 @@ header{
     text-shadow:0 0 15px #008cff;
 }
 
-.logo span{
-    color:white;
-}
+.logo span{color:white}
 
 .header-link{
     color:#00c8ff;
@@ -102,7 +97,6 @@ header{
     color:white;
     font-family:Tahoma;
     font-size:14px;
-    transition:.3s;
 }
 
 .search-box input:focus{
@@ -183,9 +177,7 @@ header{
     line-height:2;
 }
 
-.game-info{
-    padding:14px;
-}
+.game-info{padding:14px}
 
 .game-info h3{
     font-size:14px;
@@ -234,39 +226,19 @@ footer{
     line-height:2.2;
 }
 
-footer strong{
-    color:#00c8ff;
-}
+footer strong{color:#00c8ff}
 
 @media(max-width:600px){
-    header{
-        padding:15px 5%;
-    }
-
-    .logo{
-        font-size:17px;
-    }
-
-    .container{
-        width:92%;
-    }
-
-    .hero h1{
-        font-size:23px;
-    }
-
+    header{padding:15px 5%}
+    .logo{font-size:17px}
+    .container{width:92%}
+    .hero h1{font-size:23px}
     .games-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
         gap:13px;
     }
-
-    .game-info{
-        padding:10px;
-    }
-
-    .game-info h3{
-        font-size:12px;
-    }
+    .game-info{padding:10px}
+    .game-info h3{font-size:12px}
 }
 </style>
 </head>
@@ -280,41 +252,41 @@ footer strong{
 
 <main class="container">
 
-    <section class="hero">
-        <h1>آرشیو بازی‌ها</h1>
-        <p>
-            مجموعه‌ای از بازی‌های خاطره‌انگیز و محبوب
-            برای کنسول‌ها و پلتفرم‌های مختلف
-        </p>
-        <div class="counter">
-            تعداد بازی‌ها: <span id="gameCount">28</span>
-        </div>
-    </section>
-
-    <div class="search-box">
-        <input
-            type="search"
-            id="searchInput"
-            placeholder="نام بازی مورد نظر را جست‌وجو کنید..."
-        >
+<section class="hero">
+    <h1>آرشیو بازی‌ها</h1>
+    <p>
+        مجموعه‌ای از بازی‌های خاطره‌انگیز و محبوب
+        برای کنسول‌ها و پلتفرم‌های مختلف
+    </p>
+    <div class="counter">
+        تعداد بازی‌ها: <span id="gameCount">28</span>
     </div>
+</section>
 
-    <div class="filters">
-        <button class="filter-btn active" data-category="all">همه بازی‌ها</button>
-        <button class="filter-btn" data-category="اکشن">اکشن</button>
-        <button class="filter-btn" data-category="ورزشی">ورزشی</button>
-        <button class="filter-btn" data-category="مسابقه‌ای">مسابقه‌ای</button>
-        <button class="filter-btn" data-category="مبارزه‌ای">مبارزه‌ای</button>
-        <button class="filter-btn" data-category="معمایی">معمایی</button>
-        <button class="filter-btn" data-category="آرکید">آرکید</button>
-        <button class="filter-btn" data-category="شبیه‌ساز">شبیه‌ساز</button>
-    </div>
+<div class="search-box">
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="نام بازی مورد نظر را جست‌وجو کنید..."
+    >
+</div>
 
-    <section class="games-grid" id="gamesGrid"></section>
+<div class="filters">
+    <button class="filter-btn active" data-category="all">همه بازی‌ها</button>
+    <button class="filter-btn" data-category="اکشن">اکشن</button>
+    <button class="filter-btn" data-category="ورزشی">ورزشی</button>
+    <button class="filter-btn" data-category="مسابقه‌ای">مسابقه‌ای</button>
+    <button class="filter-btn" data-category="مبارزه‌ای">مبارزه‌ای</button>
+    <button class="filter-btn" data-category="معمایی">معمایی</button>
+    <button class="filter-btn" data-category="آرکید">آرکید</button>
+    <button class="filter-btn" data-category="شبیه‌ساز">شبیه‌ساز</button>
+</div>
 
-    <div class="empty" id="emptyMessage">
-        بازی مورد نظر پیدا نشد!
-    </div>
+<section class="games-grid" id="gamesGrid"></section>
+
+<div class="empty" id="emptyMessage">
+    بازی مورد نظر پیدا نشد!
+</div>
 
 </main>
 
@@ -479,21 +451,21 @@ image:"https://images.launchbox-app.com/ba322471-1e23-47e2-afad-699e9482aacf.jpg
 name:"Nintendo Legends Collection (4 in 1)",
 category:"آرکید",
 platform:"COLLECTION",
-image:"https://upload.wikimedia.org/wikipedia/commons/7/7a/Nintendo_Entertainment_System.jpg"
+image:"https://www.mariowiki.com/images/2/26/4_in_1_Nintendo_CHN_cover.png"
 },
 
 {
 name:"Mr. Bean",
 category:"معمایی",
 platform:"PS2",
-image:"https://images.launchbox-app.com/e5738011-5672-4e81-bed1-fbe4abb125b2.jpg"
+image:"https://images.launchbox-app.com/28665a1d-f41e-46ed-a16f-9d53a2facefa.jpg"
 },
 
 {
 name:"Pepsiman",
 category:"آرکید",
 platform:"PS1",
-image:"https://images.launchbox-app.com/e4700663-0973-4520-add2-b1baedba4f41.jpg"
+image:"https://images.launchbox-app.com/aa61e452-65f0-4319-ab68-c9bab9678393.jpg"
 },
 
 {
@@ -549,7 +521,6 @@ function renderGames(){
             game.category === selectedCategory;
 
         return matchesSearch && matchesCategory;
-
     });
 
     grid.innerHTML = "";
@@ -562,24 +533,17 @@ function renderGames(){
         const poster = document.createElement("div");
         poster.className = "poster";
 
-        if(game.image){
+        const img = document.createElement("img");
+        img.src = game.image;
+        img.alt = game.name;
+        img.loading = "lazy";
 
-            const img = document.createElement("img");
-            img.src = game.image;
-            img.alt = game.name;
-            img.loading = "lazy";
+        img.onerror = function(){
+            poster.innerHTML =
+                '<div class="no-image">تصویر بازی در دسترس نیست</div>';
+        };
 
-            img.onerror = function(){
-                poster.innerHTML = '<div class="no-image">تصویر بازی در دسترس نیست</div>';
-            };
-
-            poster.appendChild(img);
-
-        }else{
-
-            poster.innerHTML = '<div class="no-image">تصویر موجود نیست</div>';
-
-        }
+        poster.appendChild(img);
 
         const info = document.createElement("div");
         info.className = "game-info";
@@ -608,14 +572,12 @@ function renderGames(){
         card.appendChild(info);
 
         grid.appendChild(card);
-
     });
 
     count.textContent = filteredGames.length;
 
     emptyMessage.style.display =
         filteredGames.length === 0 ? "block" : "none";
-
 }
 
 document.querySelectorAll(".filter-btn").forEach(button => {
@@ -627,13 +589,10 @@ document.querySelectorAll(".filter-btn").forEach(button => {
         });
 
         this.classList.add("active");
-
         selectedCategory = this.dataset.category;
 
         renderGames();
-
     });
-
 });
 
 searchInput.addEventListener("input", renderGames);
