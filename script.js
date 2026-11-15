@@ -1,36 +1,68 @@
-/* neon3d.js | پس‌زمینه‌ی سه‌بعدی نئونی برای کل سایت
-   استفاده: توی هر صفحه، قبل از </body> این یک خط را اضافه کنید:
-   <script src="neon3d.js" defer></script>
-   (Three.js خودش از cdnjs لود می‌شود. اگر لود نشد، سایت بدون سه‌بعدی کار می‌کند.) */
-(function () {
-  var D = document, root = D.documentElement;
-  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  root.classList.add('js');
+"use strict";
 
-  /* ---------- جلوه‌های ساده (بدون نیاز به Three.js) ---------- */
-  var pg = D.createElement('div'); pg.id = 'pg'; D.body.appendChild(pg);
-  function prog() { var m = root.scrollHeight - innerHeight; return m > 0 ? Math.min(scrollY / m, 1) : 0; }
-  addEventListener('scroll', function () { pg.style.transform = 'scaleX(' + prog() + ')'; }, { passive: true });
+/* ===== منوی موبایل ===== */
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
 
-  var hi = D.getElementById('hi');
-  if (hi && !still) {
-    var ht = hi.textContent, hn = 0; hi.textContent = '';
-    (function ty() { hn++; hi.textContent = ht.slice(0, hn); if (hn < ht.length) setTimeout(ty, 75); })();
-  }
-
-  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: .12 }) : null;
-  D.querySelectorAll('.card,.section-head,.cta,.page-hero,.about-box,.hero-text,.hero-card').forEach(function (el) {
-    if (io) { el.classList.add('rv'); io.observe(el); }
+if (menuBtn && nav) {
+  menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    menuBtn.classList.toggle("active");
   });
-  D.querySelectorAll('.card').forEach(function (c) {
-    c.addEventListener('pointermove', function (e) {
-      var r = c.getBoundingClientRect();
-      c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      menuBtn.classList.remove("active");
     });
   });
+}
 
-  /* ---------- شهر نئونی سه‌بعدی ---------- */
-  function start() {
-    if (!window.THREE) return;
+
+/* ===== تغییر تم ===== */
+const themeBtn = document.getElementById("themeBtn");
+
+if (themeBtn) {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light");
+    themeBtn.textContent = "☀";
+  }
+
+  themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+
+    const isLight = document.body.classList.contains("light");
+
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+    themeBtn.textContent = isLight ? "☀" : "☾";
+  });
+}
+
+
+/* ===== هدر هنگام اسکرول ===== */
+const header = document.getElementById("header");
+
+if (header) {
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 30);
+  });
+}
+
+
+/* ===== برگشت به بالا ===== */
+const topBtn = document.getElementById("topBtn");
+
+if (topBtn) {
+  window.addEventListener("scroll", () => {
+    topBtn.classList.toggle("show", window.scrollY > 300);
+  });
+
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
